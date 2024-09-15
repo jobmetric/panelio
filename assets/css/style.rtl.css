@@ -1,0 +1,7 @@
+:root {
+    --bs-font-sans-serif: "farsi-num", "font-primary", Inter, Helvetica, "sans-serif";
+}
+
+html, body {
+    font-family: "farsi-num", "font-primary", Inter, Helvetica, "sans-serif" !important;
+}

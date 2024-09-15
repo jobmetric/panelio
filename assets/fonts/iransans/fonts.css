@@ -1,0 +1,104 @@
+/* Ultra Light */
+@font-face{
+    font-family:'font-primary';
+    src:url('eot/ultra_light.eot');
+    src:url('eot/ultra_light.eot?#iefix') format('embedded-opentype'),
+    url('woff/ultra_light.woff') format('woff'),
+    url('woff2/ultra_light.woff2') format('woff2'),
+    url('ttf/ultra_light.ttf') format('ttf');
+    font-weight:200;
+}
+/* Light */
+@font-face{
+    font-family:'font-primary';
+    src:url('eot/light.eot');
+    src:url('eot/light.eot?#iefix') format('embedded-opentype'),
+    url('woff/light.woff') format('woff'),
+    url('woff2/light.woff2') format('woff2'),
+    url('ttf/light.ttf') format('ttf');
+    font-weight:300;
+}
+/* Regular */
+@font-face{
+    font-family:'font-primary';
+    src:url('eot/regular.eot');
+    src:url('eot/regular.eot?#iefix') format('embedded-opentype'),
+    url('woff/regular.woff') format('woff'),
+    url('woff2/regular.woff2') format('woff2'),
+    url('ttf/regular.ttf') format('ttf');
+    font-weight:normal;
+}
+/* Semi Bold */
+@font-face{
+    font-family:'font-primary';
+    src:url('eot/medium.eot');
+    src:url('eot/medium.eot?#iefix') format('embedded-opentype'),
+    url('woff/medium.woff') format('woff'),
+    url('woff2/medium.woff2') format('woff2'),
+    url('ttf/medium.ttf') format('ttf');
+    font-weight:500;
+}
+/* Bold */
+@font-face{
+    font-family:'font-primary';
+    src:url('eot/bold.eot');
+    src:url('eot/bold.eot?#iefix') format('embedded-opentype'),
+    url('woff/bold.woff') format('woff'),
+    url('woff2/bold.woff2') format('woff2'),
+    url('ttf/bold.ttf') format('ttf');
+    font-weight:bold;
+}
+/* Define Force Numeric Fonts */
+/* Ultra Light */
+@font-face{
+    font-family:'farsi-num';
+    src:url('num/eot/ultra_light.eot');
+    src:url('num/eot/ultra_light.eot?#iefix') format('embedded-opentype'),
+    url('num/woff/ultra_light.woff') format('woff'),
+    url('num/woff2/ultra_light.woff2') format('woff2'),
+    url('num/ttf/ultra_light.ttf') format('ttf');
+    font-weight:200;
+}
+/* Light */
+@font-face{
+    font-family:'farsi-num';
+    src: url('num/eot/light.eot');
+    src: url('num/eot/light.eot?#iefix') format('embedded-opentype'),
+    url('num/woff/light.woff') format('woff'),
+    url('num/woff2/light.woff2') format('woff2'),
+    url('num/ttf/light.ttf') format('ttf');
+    font-weight:300;
+}
+/* Regular */
+@font-face{
+    font-family:'farsi-num';
+    src:url('num/eot/regular.eot');
+    src:url('num/eot/regular.eot?#iefix') format('embedded-opentype'),
+    url('num/woff/regular.woff') format('woff'),
+    url('num/woff2/regular.woff2') format('woff2'),
+    url('num/ttf/regular.ttf') format('ttf');
+    font-weight:normal;
+}
+/* Semi Bold */
+@font-face{
+    font-family:'farsi-num';
+    src:url('num/eot/medium.eot');
+    src:url('num/eot/medium.eot?#iefix') format('embedded-opentype'),
+    url('num/woff/medium.woff') format('woff'),
+    url('num/woff2/medium.woff2') format('woff2'),
+    url('num/ttf/medium.ttf') format('ttf');
+    font-weight:500;
+}
+/* Bold */
+@font-face{
+    font-family:'farsi-num';
+    src:url('num/eot/bold.eot');
+    src:url('num/eot/bold.eot?#iefix') format('embedded-opentype'),
+    url('num/woff/bold.woff') format('woff'),
+    url('num/woff2/bold.woff2') format('woff2'),
+    url('num/ttf/bold.ttf') format('ttf');
+    font-weight:bold;
+}
+.farsi-num{
+    font-family:'farsi-num';
+}
