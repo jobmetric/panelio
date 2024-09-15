@@ -3,6 +3,7 @@
 namespace JobMetric\Panelio;
 
 use Illuminate\Support\Facades\Blade;
+use JobMetric\PackageCore\Exceptions\AssetFolderNotFoundException;
 use JobMetric\PackageCore\Exceptions\RegisterClassTypeNotFoundException;
 use JobMetric\PackageCore\PackageCore;
 use JobMetric\PackageCore\PackageCoreServiceProvider;
@@ -16,6 +17,7 @@ class PanelioServiceProvider extends PackageCoreServiceProvider
      *
      * @return void
      * @throws RegisterClassTypeNotFoundException
+     * @throws AssetFolderNotFoundException
      */
     public function configuration(PackageCore $package): void
     {
@@ -23,6 +25,7 @@ class PanelioServiceProvider extends PackageCoreServiceProvider
             ->hasConfig()
             ->hasTranslation()
             ->hasRoute()
+            ->hasAsset()
             ->hasComponent()
             ->registerClass('Panelio', Panelio::class);
     }
