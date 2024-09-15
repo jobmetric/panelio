@@ -1,0 +1,55 @@
+{
+    "name": "jobmetric/panelio",
+    "description": "Panelio is a very useful package for creating a cool admin panel.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "jobmetric",
+        "package",
+        "panel",
+        "admin",
+        "panel maker"
+    ],
+    "homepage": "https://doc.jobmetric.net/package/panelio",
+    "authors": [
+        {
+            "name": "Majid Mohammadian",
+            "email": "majeedmohammadian@gmail.com",
+            "homepage": "https://www.linkedin.com/in/majidmohammadian/",
+            "role": "Full Stack Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "ext-zip": "*",
+        "laravel/framework": ">=9.19",
+        "jobmetric/laravel-package-core": "^1.12"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "JobMetric\\Panelio\\": "src/",
+            "JobMetric\\Panelio\\Factories\\": "database/factories/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JobMetric\\Panelio\\PanelioServiceProvider"
+            ],
+            "aliases": {
+                "Media": "JobMetric\\Panelio\\Facades\\PanelioService"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "support": {
+        "issues": "https://github.com/jobmetric/panelio/issues",
+        "forum": "https://twitter.com/jobmetric",
+        "source": "https://github.com/jobmetric/panelio"
+    }
+}
