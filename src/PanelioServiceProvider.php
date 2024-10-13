@@ -3,6 +3,7 @@
 namespace JobMetric\Panelio;
 
 use Illuminate\Support\Facades\Blade;
+use JobMetric\Category\Events\CategoryTypeEvent;
 use JobMetric\PackageCore\Exceptions\AssetFolderNotFoundException;
 use JobMetric\PackageCore\Exceptions\RegisterClassTypeNotFoundException;
 use JobMetric\PackageCore\PackageCore;
@@ -28,6 +29,18 @@ class PanelioServiceProvider extends PackageCoreServiceProvider
             ->hasAsset()
             ->hasComponent()
             ->registerClass('Panelio', Panelio::class);
+    }
+
+    /**
+     * After register package
+     *
+     * @return void
+     */
+    public function afterRegisterPackage(): void
+    {
+        $this->app->singleton('panelio', function () {
+            return [];
+        });
     }
 
     /**
