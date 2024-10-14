@@ -76,6 +76,7 @@ class Panelio
             'slug' => $slug,
             'name' => $params['name'],
             'args' => $params['args'] ?? [], // description, icon, ...
+            'permission' => $params['permission'] ?? null,
             'position' => $params['position'] ?? 0,
             'sections' => [],
             'notifications' => [],
@@ -176,6 +177,7 @@ class Panelio
             'slug' => $slug,
             'name' => $params['name'],
             'args' => $params['args'] ?? [], // title, description, icon, ...
+            'permission' => $params['permission'] ?? null,
             'position' => $params['position'] ?? 0,
             'menus' => []
         ];
@@ -290,6 +292,7 @@ class Panelio
             $panelio[$panelKey]['sections'][$sectionKey]['menus'][] = [
                 'type' => 'group',
                 'name' => $params['name'],
+                'permission' => $params['permission'] ?? null,
                 'position' => $params['position'] ?? 0,
             ];
         } else {
@@ -298,6 +301,7 @@ class Panelio
                 'name' => $params['name'],
                 'link' => $params['link'] ?? null,
                 'icon' => $params['icon'] ?? '',
+                'permission' => $params['permission'] ?? null,
                 'position' => $params['position'] ?? 0,
                 'submenus' => []
             ];
@@ -407,6 +411,7 @@ class Panelio
         $panelio[$panelKey]['sections'][$sectionKey]['menus'][$menuKey]['submenus'][] = [
             'name' => $params['name'],
             'link' => $params['link'] ?? null,
+            'permission' => $params['permission'] ?? null,
             'position' => $params['position'] ?? 0,
         ];
 
