@@ -74,6 +74,7 @@ class Panelio
 
         $panelio[] = [
             'slug' => $slug,
+            'namespace' => $params['namespace'] ?? null,
             'name' => $params['name'],
             'args' => $params['args'] ?? [], // description, icon, ...
             'permission' => $params['permission'] ?? null,
