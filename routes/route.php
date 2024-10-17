@@ -2,6 +2,7 @@
 
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Support\Facades\Route;
+use JobMetric\Panelio\RouteRegistry;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,15 @@ Route::prefix('panelio')->name('panelio.')->namespace('JobMetric\Panelio\Http\Co
         SubstituteBindings::class
     ])->group(function () {
         // panelio routes
+    });
+});
+
+// panel
+Route::prefix('p')->name('panel.')->group(function () {
+    Route::middleware([
+        SubstituteBindings::class
+    ])->group(function () {
+        // some panel routes
+        RouteRegistry::registerRoutes();
     });
 });
