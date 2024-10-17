@@ -28,7 +28,7 @@ Route::prefix('panelio')->name('panelio.')->namespace('JobMetric\Panelio\Http\Co
 Route::prefix('p')->name('panel.')->group(function () {
     Route::middleware([
         SubstituteBindings::class,
-//        AuthMiddleware::class
+        AuthMiddleware::class
     ])->group(function () {
         Route::get('/', [PanelioController::class, 'index'])->name('index');
 
