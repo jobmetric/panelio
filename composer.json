@@ -25,7 +25,8 @@
         "ext-json": "*",
         "ext-zip": "*",
         "laravel/framework": ">=9.19",
-        "jobmetric/laravel-package-core": "^1.12"
+        "jobmetric/laravel-package-core": "^1.12",
+        "jobmetric/domi": "^1.8"
     },
     "autoload": {
         "files": [
