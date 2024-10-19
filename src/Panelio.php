@@ -80,6 +80,7 @@ class Panelio
             'permission' => $params['permission'] ?? null,
             'position' => $params['position'] ?? 0,
             'sections' => [],
+            'dashboard_links' => [],
             'notifications' => [],
             'profiles' => []
         ];
@@ -441,5 +442,52 @@ class Panelio
         }
 
         return in_array($subMenuName, array_column($menu[$menuKey]['submenus'], 'name'));
+    }
+
+    /**
+     * Add Dashboard Link to Panel.
+     *
+     * @param string $panelSlug
+     * @param array $params
+     *
+     * @return void
+     * @throws Throwable
+     */
+    public function addDashboardLink(string $panelSlug, array $params = []): void
+    {
+        $panelio = $this->get();
+
+        $panelKey = $this->getPanelKey($panelSlug);
+
+        $panelio[$panelKey]['dashboard_links'][] = [
+            'name' => $params['name'],
+            'link' => $params['link'] ?? 'javascript:void(0)',
+            'icon' => $params['icon'] ?? null,
+            'permission' => $params['permission'] ?? null,
+            'position' => $params['position'] ?? 0
+        ];
+
+        $this->set($panelio);
+    }
+
+    /**
+     * Get Dashboard Links by slug sorted by position.
+     *
+     * @param string $panelSlug
+     *
+     * @return array
+     * @throws Throwable
+     */
+    public function getDashboardLinks(string $panelSlug): array
+    {
+        $panel = $this->getPanel($panelSlug);
+
+        $dashboard_links = $panel['dashboard_links'];
+
+        usort($dashboard_links, function ($a, $b) {
+            return $a['position'] <=> $b['position'];
+        });
+
+        return $dashboard_links;
     }
 }

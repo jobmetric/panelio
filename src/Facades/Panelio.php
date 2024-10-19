@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Facade;
  * @method static void addMenu(string $panelSlug, string $sectionSlug, array $params = [])
  * @method static array getMenus(string $panelSlug, string $sectionSlug)
  * @method static void addSubmenu(string $panelSlug, string $sectionSlug, string $menuName, array $params = [])
+ * @method static void addDashboardLink(string $panelSlug, array $params = [])
+ * @method static array getDashboardLinks(string $panelSlug)
  *
  * @see \JobMetric\Panelio\Panelio
  */
