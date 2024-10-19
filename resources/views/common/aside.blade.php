@@ -8,7 +8,7 @@
         <div class="aside-nav d-flex flex-column align-items-center flex-column-fluid w-100 pt-5 pt-lg-0" id="kt_aside_nav">
             <div class="hover-scroll-overlay-y mb-5 scroll-ms px-5" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto" data-kt-scroll-wrappers="#kt_aside_nav" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-offset="0px">
                 <ul class="nav flex-column w-100" id="kt_aside_nav_tabs">
-                    <li class="nav-item mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="داشبورد">
+                    <li class="nav-item mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans('panelio::base.section.dashboard.name') }}">
                         <a class="nav-link btn btn-icon btn-active-color-primary btn-color-gray-400 btn-active-light @if(Route::is('panel.' . get_current_panel() . '.dashboard')) active @endif" @if(Route::is('panel.' . get_current_panel() . '.dashboard')) data-bs-toggle="tab" href="#aside_menu_dashboard" @else href="{{ route('admin.dashboard') }}" @endif>
                             <i class="ki-duotone ki-element-11 fs-2x">
                                 <span class="path1"></span>
@@ -65,7 +65,7 @@
                                     <span class="path10"></span>
                                 </i>
                             </span>
-                            <span class="menu-title">روشن</span>
+                            <span class="menu-title">{{ trans('panelio::base.mode.light') }}</span>
                         </a>
                     </div>
                     <div class="menu-item px-3 my-0">
@@ -76,7 +76,7 @@
                                     <span class="path2"></span>
                                 </i>
                             </span>
-                            <span class="menu-title">تاریک</span>
+                            <span class="menu-title">{{ trans('panelio::base.mode.dark') }}</span>
                         </a>
                     </div>
                     <div class="menu-item px-3 my-0">
@@ -89,13 +89,13 @@
                                     <span class="path4"></span>
                                 </i>
                             </span>
-                            <span class="menu-title">سیستم</span>
+                            <span class="menu-title">{{ trans('panelio::base.mode.system') }}</span>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="d-flex align-items-center mb-2">
-                <div class="btn btn-icon btn-active-color-primary btn-color-gray-400 btn-active-light" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-end" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="نوتیفیکیشن">
+                <div class="btn btn-icon btn-active-color-primary btn-color-gray-400 btn-active-light" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-end" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans('panelio::base.notification.title') }}">
                     <i class="ki-duotone ki-notification-on fs-2 fs-lg-1 animation-shake">
                         <span class="path1"></span>
                         <span class="path2"></span>
@@ -107,8 +107,8 @@
                 <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true" id="kt_menu_notifications">
                     <div class="d-flex flex-column bgi-no-repeat rounded-top" style="background-image:url('{{ asset('assets/vendor/panelio/misc/dropdown-header-bg.png') }}')">
                         <h3 class="text-white fw-semibold px-9 mt-10 mb-6">
-                            <span>نوتیفیکیشن</span>
-                            <span class="fs-8 opacity-75 ps-3">24 گزارش</span>
+                            <span>{{ trans('panelio::base.notification.title') }}</span>
+                            <span class="fs-8 opacity-75 ps-3">{{ trans('panelio::base.notification.report', ['number' => 24]) }}</span>
                         </h3>
                         <ul class="nav nav-line-tabs nav-line-tabs-2x nav-stretch fw-semibold px-9">
                             <li class="nav-item">
@@ -145,7 +145,7 @@
                             </div>
                             <div class="py-3 text-center border-top">
                                 <a href="javascript:void(0)" class="btn btn-color-gray-600 btn-active-color-primary">
-                                    <span>مشاهده همه</span>
+                                    <span>{{ trans('panelio::base.notification.all') }}</span>
                                 </a>
                             </div>
                         </div>
@@ -171,7 +171,7 @@
                             </div>
                             <div class="py-3 text-center border-top">
                                 <a href="javascript:void(0)" class="btn btn-color-gray-600 btn-active-color-primary">
-                                    <span>مشاهده همه</span>
+                                    <span>{{ trans('panelio::base.notification.all') }}</span>
                                 </a>
                             </div>
                         </div>
@@ -190,7 +190,7 @@
                             </div>
                             <div class="py-3 text-center border-top">
                                 <a href="javascript:void(0)" class="btn btn-color-gray-600 btn-active-color-primary">
-                                    <span>نمایش همه</span>
+                                    <span>{{ trans('panelio::base.notification.all') }}</span>
                                 </a>
                             </div>
                         </div>
@@ -265,64 +265,18 @@
                     <div class="tab-content">
                         <div class="tab-pane fade @if(Route::is('panel.' . get_current_panel() . '.dashboard')) active show @endif" id="aside_menu_dashboard" role="tabpanel">
                             <div class="mx-5">
-                                <h3 class="fw-bold text-dark mb-10 mx-0">گزارشات ویژه</h3>
+                                <h3 class="fw-bold text-dark mb-10 mx-0">{{ trans('panelio::base.section.dashboard.title') }}</h3>
                                 <div class="mb-12">
-                                    <div class="d-flex align-items-center mb-7">
-                                        <div class="symbol symbol-50px me-5">
-                                            <span class="symbol-label bg-light-success">
-                                                <i class="ki-duotone ki-abstract-26 fs-2x text-success">
-                                                    <span class="path1"></span>
-                                                    <span class="path2"></span>
-                                                </i>
-                                            </span>
+                                    @foreach(\JobMetric\Panelio\Facades\Panelio::getDashboardLinks(get_current_panel()) as $dashboardLink)
+                                        <div class="d-flex align-items-center mb-7">
+                                            <div class="symbol symbol-50px me-5">
+                                                {!! $dashboardLink['icon'] !!}
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <a href="{{ $dashboardLink['link'] }}" class="text-gray-800 text-hover-primary fs-6 fw-bold">{{ $dashboardLink['name'] }}</a>
+                                            </div>
                                         </div>
-                                        <div class="d-flex flex-column">
-                                            <a href="javascript:void(0)" class="text-gray-800 text-hover-primary fs-6 fw-bold">آخرین کاربران</a>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center mb-7">
-                                        <div class="symbol symbol-50px me-5">
-                                            <span class="symbol-label bg-light-warning">
-                                                <i class="ki-duotone ki-pencil fs-2x text-warning">
-                                                    <span class="path1"></span>
-                                                    <span class="path2"></span>
-                                                </i>
-                                            </span>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <a href="javascript:void(0)" class="text-gray-800 text-hover-primary fs-6 fw-bold">آخرین فروش ها</a>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center mb-7">
-                                        <div class="symbol symbol-50px me-5">
-                                            <span class="symbol-label bg-light-primary">
-                                                <i class="ki-duotone ki-message-text-2 fs-2x text-primary">
-                                                    <span class="path1"></span>
-                                                    <span class="path2"></span>
-                                                    <span class="path3"></span>
-                                                </i>
-                                            </span>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <a href="javascript:void(0)" class="text-gray-800 text-hover-primary fs-6 fw-bold">کاربران در کشور های مختلف</a>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center mb-7">
-                                        <div class="symbol symbol-50px me-5">
-                                            <span class="symbol-label bg-light-danger">
-                                                <i class="ki-duotone ki-disconnect fs-2x text-danger">
-                                                    <span class="path1"></span>
-                                                    <span class="path2"></span>
-                                                    <span class="path3"></span>
-                                                    <span class="path4"></span>
-                                                    <span class="path5"></span>
-                                                </i>
-                                            </span>
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <a href="javascript:void(0)" class="text-gray-800 text-hover-primary fs-6 fw-bold">تیکت ها</a>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

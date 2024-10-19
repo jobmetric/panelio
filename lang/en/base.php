@@ -18,4 +18,23 @@ return [
         "menu_in_section_panel_not_found" => "Menu :menu_name in Section :section in Panel :panel not found.",
     ],
 
+    'section' => [
+        'dashboard' => [
+            'name' => 'Dashboard',
+            'title' => 'Special Reports',
+        ]
+    ],
+
+    'mode' => [
+        'light' => 'Light',
+        'dark' => 'Dark',
+        'system' => 'System',
+    ],
+
+    'notification' => [
+        'title' => 'Notification',
+        'report' => ':number new report',
+        'all' => 'View All'
+    ]
+
 ];
