@@ -81,6 +81,7 @@ class Panelio
             'position' => $params['position'] ?? 0,
             'sections' => [],
             'dashboard_links' => [],
+            'profile_links' => [],
             'notifications' => [],
             'profiles' => []
         ];
@@ -489,5 +490,51 @@ class Panelio
         });
 
         return $dashboard_links;
+    }
+
+    /**
+     * Add Profile Link to Panel.
+     *
+     * @param string $panelSlug
+     * @param array $params
+     *
+     * @return void
+     * @throws Throwable
+     */
+    public function addProfileLink(string $panelSlug, array $params = []): void
+    {
+        $panelio = $this->get();
+
+        $panelKey = $this->getPanelKey($panelSlug);
+
+        $panelio[$panelKey]['profile_links'][] = [
+            'name' => $params['name'],
+            'link' => $params['link'] ?? 'javascript:void(0)',
+            'permission' => $params['permission'] ?? null,
+            'position' => $params['position'] ?? 0
+        ];
+
+        $this->set($panelio);
+    }
+
+    /**
+     * Get Profile Links by slug sorted by position.
+     *
+     * @param string $panelSlug
+     *
+     * @return array
+     * @throws Throwable
+     */
+    public function getProfileLinks(string $panelSlug): array
+    {
+        $panel = $this->getPanel($panelSlug);
+
+        $profile_links = $panel['profile_links'];
+
+        usort($profile_links, function ($a, $b) {
+            return $a['position'] <=> $b['position'];
+        });
+
+        return $profile_links;
     }
 }
