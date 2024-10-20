@@ -23,6 +23,10 @@ return [
             'name' => 'داشبورد',
             'title' => 'گزارشات ویژه',
         ],
+        'panels' => [
+            'name' => 'پنل ها',
+            'title' => 'پنل های مدیریتی',
+        ],
         'notification' => [
             'title' => 'اطلاع رسانی',
             'report' => ':number گزارش جدید',

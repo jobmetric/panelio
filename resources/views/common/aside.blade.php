@@ -95,6 +95,50 @@
                 </div>
             </div>
             <div class="d-flex align-items-center mb-2">
+                <div class="btn btn-icon btn-active-color-primary btn-color-gray-400 btn-active-light" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="@if(trans('domi::base.direction') == 'rtl') 'top-end' @else 'top-start' @endif" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans('panelio::base.section.panels.name') }}">
+                    <i class="ki-duotone ki-educare fs-2 fs-lg-1">
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                        <span class="path3"></span>
+                        <span class="path4"></span>
+                    </i>
+                </div>
+                <div class="menu menu-sub menu-sub-dropdown menu-column w-250px w-lg-325px" data-kt-menu="true">
+                    <div class="d-flex flex-column flex-center bgi-no-repeat rounded-top px-9 py-7" style="background-image:url('{{ asset('assets/vendor/panelio/misc/dropdown-header-bg.png') }}')">
+                        <h3 class="text-white fw-semibold mb-3">{{ trans('panelio::base.section.panels.title') }}</h3>
+                    </div>
+                    <div class="row g-0 m-2">
+                        @foreach(\JobMetric\Panelio\Facades\Panelio::getPanels() as $panel)
+                            <div class="col-12">
+                                <a href="p/{{ $panel['slug'] }}" target="_blank">
+                                    <div class="d-flex justify-content-between align-items-center p-2 px-4 bg-hover-light-dark rounded rounded-2">
+                                        <div class="d-flex align-items-center">
+                                            <div class="symbol-label fs-2 fw-semibold bg-gray-100 px-4 pt-3 rounded rounded-2">
+                                                {!! $panel['args']['icon'] !!}
+                                            </div>
+                                            <span class="text-gray-800 fs-6 fw-semibold ms-3">{{ trans($panel['name']) }}</span>
+                                        </div>
+                                        <div>
+                                            @if(trans('domi::base.direction') == 'rtl')
+                                                <i class="ki-duotone ki-arrow-left fs-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i>
+                                            @else
+                                                <i class="ki-duotone ki-arrow-right fs-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mb-2">
                 <div class="btn btn-icon btn-active-color-primary btn-color-gray-400 btn-active-light" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-end" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans('panelio::base.section.notification.title') }}">
                     <i class="ki-duotone ki-notification-on fs-2 fs-lg-1 animation-shake">
                         <span class="path1"></span>

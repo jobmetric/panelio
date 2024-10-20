@@ -23,6 +23,10 @@ return [
             'name' => 'Dashboard',
             'title' => 'Special Reports',
         ],
+        'panels' => [
+            'name' => 'Panels',
+            'title' => 'Management Panels',
+        ],
         'notification' => [
             'title' => 'Notification',
             'report' => ':number new report',
