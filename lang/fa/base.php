@@ -22,7 +22,18 @@ return [
         'dashboard' => [
             'name' => 'داشبورد',
             'title' => 'گزارشات ویژه',
-        ]
+        ],
+        'notification' => [
+            'title' => 'اطلاع رسانی',
+            'report' => ':number گزارش جدید',
+            'all' => 'مشاهده همه'
+        ],
+        'profile' => [
+            'title' => 'پروفایل',
+            'languages' => 'زبان ها',
+            'setting' => 'تنظیمات',
+            'logout' => 'خروج',
+        ],
     ],
 
     'mode' => [
@@ -31,10 +42,6 @@ return [
         'system' => 'سیستم',
     ],
 
-    'notification' => [
-        'title' => 'اطلاع رسانی',
-        'report' => ':number گزارش جدید',
-        'all' => 'مشاهده همه'
-    ]
+    'show_website' => 'نمایش وب سایت',
 
 ];

@@ -22,7 +22,18 @@ return [
         'dashboard' => [
             'name' => 'Dashboard',
             'title' => 'Special Reports',
-        ]
+        ],
+        'notification' => [
+            'title' => 'Notification',
+            'report' => ':number new report',
+            'all' => 'View All'
+        ],
+        'profile' => [
+            'title' => 'Profile',
+            'languages' => 'Languages',
+            'setting' => 'Setting',
+            'logout' => 'Logout',
+        ],
     ],
 
     'mode' => [
@@ -31,10 +42,6 @@ return [
         'system' => 'System',
     ],
 
-    'notification' => [
-        'title' => 'Notification',
-        'report' => ':number new report',
-        'all' => 'View All'
-    ]
+    'show_website' => 'Show Website',
 
 ];

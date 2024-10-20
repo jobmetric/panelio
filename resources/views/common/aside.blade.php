@@ -95,7 +95,7 @@
                 </div>
             </div>
             <div class="d-flex align-items-center mb-2">
-                <div class="btn btn-icon btn-active-color-primary btn-color-gray-400 btn-active-light" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-end" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans('panelio::base.notification.title') }}">
+                <div class="btn btn-icon btn-active-color-primary btn-color-gray-400 btn-active-light" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-end" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans('panelio::base.section.notification.title') }}">
                     <i class="ki-duotone ki-notification-on fs-2 fs-lg-1 animation-shake">
                         <span class="path1"></span>
                         <span class="path2"></span>
@@ -104,11 +104,11 @@
                         <span class="path5"></span>
                     </i>
                 </div>
-                <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true" id="kt_menu_notifications">
+                <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true" id="aside-notification">
                     <div class="d-flex flex-column bgi-no-repeat rounded-top" style="background-image:url('{{ asset('assets/vendor/panelio/misc/dropdown-header-bg.png') }}')">
                         <h3 class="text-white fw-semibold px-9 mt-10 mb-6">
-                            <span>{{ trans('panelio::base.notification.title') }}</span>
-                            <span class="fs-8 opacity-75 ps-3">{{ trans('panelio::base.notification.report', ['number' => 24]) }}</span>
+                            <span>{{ trans('panelio::base.section.notification.title') }}</span>
+                            <span class="fs-8 opacity-75 ps-3">{{ trans('panelio::base.section.notification.report', ['number' => 24]) }}</span>
                         </h3>
                         <ul class="nav nav-line-tabs nav-line-tabs-2x nav-stretch fw-semibold px-9">
                             <li class="nav-item">
@@ -145,7 +145,7 @@
                             </div>
                             <div class="py-3 text-center border-top">
                                 <a href="javascript:void(0)" class="btn btn-color-gray-600 btn-active-color-primary">
-                                    <span>{{ trans('panelio::base.notification.all') }}</span>
+                                    <span>{{ trans('panelio::base.section.notification.all') }}</span>
                                 </a>
                             </div>
                         </div>
@@ -171,7 +171,7 @@
                             </div>
                             <div class="py-3 text-center border-top">
                                 <a href="javascript:void(0)" class="btn btn-color-gray-600 btn-active-color-primary">
-                                    <span>{{ trans('panelio::base.notification.all') }}</span>
+                                    <span>{{ trans('panelio::base.section.notification.all') }}</span>
                                 </a>
                             </div>
                         </div>
@@ -190,7 +190,7 @@
                             </div>
                             <div class="py-3 text-center border-top">
                                 <a href="javascript:void(0)" class="btn btn-color-gray-600 btn-active-color-primary">
-                                    <span>{{ trans('panelio::base.notification.all') }}</span>
+                                    <span>{{ trans('panelio::base.section.notification.all') }}</span>
                                 </a>
                             </div>
                         </div>
@@ -198,14 +198,16 @@
                 </div>
             </div>
             <div class="d-flex align-items-center mb-10" id="aside_profile_menu">
-                <div class="cursor-pointer symbol symbol-40px" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-end" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="پروفایل">
-                    <img src="{{ asset('avatar/default.jpg') }}" alt="image" />
+                <div class="cursor-pointer symbol symbol-40px" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-end" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans('panelio::base.section.profile.title') }}">
+                    <div class="symbol-label fs-2 fw-semibold bg-danger text-inverse-danger">M</div>
+                    {{--<img src="{{ asset('avatar/default.jpg') }}" alt="image" />--}}
                 </div>
                 <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
                     <div class="menu-item px-3">
                         <div class="menu-content d-flex align-items-center px-3">
                             <div class="symbol symbol-50px me-5">
-                                <img alt="Logo" src="{{ asset('avatar/default.jpg') }}" />
+                                <div class="symbol-label fs-2 fw-semibold bg-danger text-inverse-danger">M</div>
+                                {{--<img alt="Logo" src="{{ asset('avatar/default.jpg') }}" />--}}
                             </div>
                             <div class="d-flex flex-column">
                                 <div class="fw-bold d-flex align-items-center fs-5">
@@ -216,43 +218,43 @@
                             </div>
                         </div>
                     </div>
-                    <div class="separator my-2"></div>
-                    <div class="menu-item px-5">
-                        <a href="javascript:void(0)" class="menu-link px-5">پروفایل</a>
-                    </div>
-                    <div class="menu-item px-5">
-                        <a href="javascript:void(0)" class="menu-link px-5">
-                            <span class="menu-text">تیکت ها</span>
-                            <span class="menu-badge">
-                                <span class="badge badge-light-danger badge-circle fw-bold fs-7">3</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="separator my-2"></div>
-                    <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start" data-kt-menu-offset="-15px, 0">
-                        <a href="#" class="menu-link px-5">
-                            <span class="menu-title position-relative">زبان ها
-                            <span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">{{ $languageInfo->name }}
-                            <img class="w-15px h-15px rounded-1 ms-2" src="{{ asset('flags/' . $languageInfo->flag) }}" alt=""></span></span>
-                        </a>
-                        <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                            @foreach($languages as $language)
-                                <div class="menu-item px-3">
-                                    <a href="javascript:void(0)" class="menu-link d-flex px-5 change-language @if(app()->getLocale() == $language->locale) active @endif" data-lang="{{ $language->locale }}">
-                                        <span class="symbol symbol-20px me-4">
-                                            <img class="rounded-1" src="{{ asset('flags/' . $language->flag) }}" alt="">
-                                        </span>{{ $language->name }}
-                                    </a>
-                                </div>
-                            @endforeach
+                    @if(!empty(\JobMetric\Panelio\Facades\Panelio::getProfileLinks(get_current_panel())))
+                        <div class="separator my-2"></div>
+                        @foreach(\JobMetric\Panelio\Facades\Panelio::getProfileLinks(get_current_panel()) as $profileLink)
+                            <div class="menu-item px-5">
+                                <a href="{{ $profileLink['link'] }}" class="menu-link px-5">{{ $profileLink['name'] }}</a>
+                            </div>
+                        @endforeach
+                    @endif
+                    @if($languageInfo)
+                        <div class="separator my-2"></div>
+                        <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start" data-kt-menu-offset="-30px, 0">
+                            <a href="#" class="menu-link px-5">
+                                <span class="menu-title position-relative">{{ trans('panelio::base.section.profile.languages') }}
+                                    <span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">{{ $languageInfo->name }}
+                                        <img class="w-15px h-15px rounded-1 ms-2" src="{{ asset('assets/vendor/language/flags/' . $languageInfo->flag) }}" alt="">
+                                    </span>
+                                </span>
+                            </a>
+                            <div class="menu-sub menu-sub-dropdown w-175px py-4">
+                                @foreach($languages as $language)
+                                    <div class="menu-item px-3">
+                                        <a href="javascript:void(0)" class="menu-link d-flex px-5 change-language @if(app()->getLocale() == $language->locale) active @endif" data-lang="{{ $language->locale }}">
+                                            <span class="symbol symbol-20px me-4">
+                                                <img class="rounded-1" src="{{ asset('assets/vendor/language/flags/' . $language->flag) }}" alt="">
+                                            </span>{{ $language->name }}
+                                        </a>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
+                    @endif
                     <div class="separator my-2"></div>
                     <div class="menu-item px-5 my-1">
-                        <a href="javascript:void(0)" class="menu-link px-5">تنظیمات</a>
+                        <a href="javascript:void(0)" class="menu-link px-5">{{ trans('panelio::base.section.profile.setting') }}</a>
                     </div>
                     <div class="menu-item px-5">
-                        <a href="javascript:void(0)" class="menu-link px-5">خروج</a>
+                        <a href="javascript:void(0)" class="menu-link px-5">{{ trans('panelio::base.section.profile.logout') }}</a>
                     </div>
                 </div>
             </div>
@@ -261,7 +263,7 @@
     <div class="aside-secondary d-flex flex-row-fluid">
         <div class="aside-workspace my-5 p-5" id="kt_aside_wordspace">
             <div class="d-flex h-100 flex-column">
-                <div class="flex-column-fluid hover-scroll-y" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-wrappers="#kt_aside_wordspace" data-kt-scroll-dependencies="#kt_aside_secondary_footer" data-kt-scroll-offset="0px">
+                <div class="flex-column-fluid hover-scroll-y" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-wrappers="#kt_aside_wordspace" data-kt-scroll-dependencies="#aside-secondary-footer" data-kt-scroll-offset="0px">
                     <div class="tab-content">
                         <div class="tab-pane fade @if(Route::is('panel.' . get_current_panel() . '.dashboard')) active show @endif" id="aside_menu_dashboard" role="tabpanel">
                             <div class="mx-5">
@@ -339,9 +341,9 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="flex-column-auto pt-10 px-5" id="kt_aside_secondary_footer">
-                    <a href="{{ route('panel.' . get_current_panel() . '.dashboard') }}" class="btn btn-bg-light btn-color-gray-600 btn-flex btn-active-color-primary flex-center w-100">
-                        <span class="btn-label">نمایش وبسایت</span>
+                <div class="flex-column-auto pt-10 px-5" id="aside-secondary-footer">
+                    <a href="/" class="btn btn-bg-light btn-color-gray-600 btn-flex btn-active-color-primary flex-center w-100">
+                        <span class="btn-label">{{ trans('panelio::base.show_website') }}</span>
                         <i class="ki-duotone ki-document btn-icon fs-4 ms-2">
                             <span class="path1"></span>
                             <span class="path2"></span>
