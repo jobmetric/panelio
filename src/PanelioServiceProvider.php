@@ -52,5 +52,7 @@ class PanelioServiceProvider extends PackageCoreServiceProvider
     {
         // add alias for components
         Blade::component('panelio::components.button', 'button');
+
+        addLanguageScript();
     }
 }
