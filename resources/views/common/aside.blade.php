@@ -19,7 +19,7 @@
                         </a>
                     </li>
                     @foreach(\JobMetric\Panelio\Facades\Panelio::getSections(get_current_panel()) as $panel)
-                        <li class="nav-item mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="{{ $panel['name'] }}">
+                        <li class="nav-item mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans($panel['name']) }}">
                             <a class="nav-link btn btn-icon btn-active-color-primary btn-color-gray-400 btn-active-light @if(Route::is('panel.' . get_current_panel() . '.' . $panel['slug'] . '.*')) active @endif" data-bs-toggle="tab" href="#aside_menu_{{ $panel['slug'] }}">
                                 {!! $panel['args']['icon'] !!}
                             </a>
@@ -30,7 +30,7 @@
         </div>
         <div class="aside-footer d-flex flex-column align-items-center flex-column-auto" id="kt_aside_footer">
             <div class="d-flex align-items-center mb-2">
-                <a href="#" class="btn btn-icon flex-center bg-body btn-color-gray-600 btn-active-color-primary h-40px" data-kt-menu-trigger="{default:'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                <a href="#" class="btn btn-icon flex-center bg-body btn-color-gray-600 btn-active-color-primary h-40px" data-kt-menu-trigger="{default:'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="@if(trans('domi::base.direction') == 'rtl') 'top-end' @else 'top-start' @endif">
                     <i class="ki-duotone ki-night-day theme-light-show fs-2">
                         <span class="path1"></span>
                         <span class="path2"></span>
@@ -139,7 +139,7 @@
                 </div>
             </div>
             <div class="d-flex align-items-center mb-2">
-                <div class="btn btn-icon btn-active-color-primary btn-color-gray-400 btn-active-light" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-end" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans('panelio::base.section.notification.title') }}">
+                <div class="btn btn-icon btn-active-color-primary btn-color-gray-400 btn-active-light" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="@if(trans('domi::base.direction') == 'rtl') 'top-end' @else 'top-start' @endif" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans('panelio::base.section.notification.title') }}">
                     <i class="ki-duotone ki-notification-on fs-2 fs-lg-1 animation-shake">
                         <span class="path1"></span>
                         <span class="path2"></span>
@@ -242,7 +242,7 @@
                 </div>
             </div>
             <div class="d-flex align-items-center mb-10" id="aside_profile_menu">
-                <div class="cursor-pointer symbol symbol-40px" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-end" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans('panelio::base.section.profile.title') }}">
+                <div class="cursor-pointer symbol symbol-40px" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="@if(trans('domi::base.direction') == 'rtl') 'top-end' @else 'top-start' @endif" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans('panelio::base.section.profile.title') }}">
                     <div class="symbol-label fs-2 fw-semibold bg-danger text-inverse-danger">M</div>
                     {{--<img src="{{ asset('avatar/default.jpg') }}" alt="image" />--}}
                 </div>
@@ -266,7 +266,7 @@
                         <div class="separator my-2"></div>
                         @foreach(\JobMetric\Panelio\Facades\Panelio::getProfileLinks(get_current_panel()) as $profileLink)
                             <div class="menu-item px-5">
-                                <a href="{{ $profileLink['link'] }}" class="menu-link px-5">{{ $profileLink['name'] }}</a>
+                                <a href="{{ $profileLink['link'] }}" class="menu-link px-5">{{ trans($profileLink['name']) }}</a>
                             </div>
                         @endforeach
                     @endif
@@ -319,7 +319,7 @@
                                                 {!! $dashboardLink['icon'] !!}
                                             </div>
                                             <div class="d-flex flex-column">
-                                                <a href="{{ $dashboardLink['link'] }}" class="text-gray-800 text-hover-primary fs-6 fw-bold">{{ $dashboardLink['name'] }}</a>
+                                                <a href="{{ $dashboardLink['link'] }}" class="text-gray-800 text-hover-primary fs-6 fw-bold">{{ trans($dashboardLink['name']) }}</a>
                                             </div>
                                         </div>
                                     @endforeach
@@ -329,7 +329,7 @@
                         @foreach(\JobMetric\Panelio\Facades\Panelio::getSections(get_current_panel()) as $section)
                             <div class="tab-pane fade @if(Route::is('panel.' . get_current_panel() . '.' . $section['slug'] . '.*')) active show @endif" id="aside_menu_{{ $section['slug'] }}" role="tabpanel">
                                 <div class="mx-5">
-                                    <h3 class="fw-bold text-dark mb-10 mx-0">{{ $section['args']['title'] }}</h3>
+                                    <h3 class="fw-bold text-dark mb-10 mx-0">{{ trans($section['args']['title']) }}</h3>
                                 </div>
                                 <div class="menu menu-column menu-fit menu-rounded menu-title-gray-600 menu-icon-gray-400 menu-state-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-semibold fs-5 px-6 my-5 my-lg-0" id="kt_aside_menu_{{ $panel['slug'] }}" data-kt-menu="true">
                                     <div id="kt_aside_menu_{{ $section['slug'] }}_wrapper" class="menu-fit">
@@ -337,7 +337,7 @@
                                             @if($menu['type'] == 'group')
                                                 <div class="menu-item pt-5">
                                                     <div class="menu-content">
-                                                        <span class="menu-heading fw-bold text-uppercase fs-7">{{ $menu['name'] }}</span>
+                                                        <span class="menu-heading fw-bold text-uppercase fs-7">{{ trans($menu['name']) }}</span>
                                                     </div>
                                                 </div>
                                             @else
@@ -347,7 +347,7 @@
                                                             <span class="menu-icon">
                                                                 {!! $menu['icon'] !!}
                                                             </span>
-                                                            <span class="menu-title">{{ $menu['name'] }}</span>
+                                                            <span class="menu-title">{{ trans($menu['name']) }}</span>
                                                         </a>
                                                     </div>
                                                 @else
@@ -360,7 +360,7 @@
                                                                     <span class="path3"></span>
                                                                 </i>
                                                             </span>
-                                                            <span class="menu-title">{{ $menu['name'] }}</span>
+                                                            <span class="menu-title">{{ trans($menu['name']) }}</span>
                                                             <span class="menu-arrow"></span>
                                                         </span>
                                                         <div class="menu-sub menu-sub-accordion">
@@ -370,7 +370,7 @@
                                                                         <span class="menu-bullet">
                                                                         <span class="bullet bullet-dot"></span>
                                                                     </span>
-                                                                        <span class="menu-title">منوی اصلی</span>
+                                                                        <span class="menu-title">{{ trans($submenu['name']) }}</span>
                                                                     </a>
                                                                 </div>
                                                             @endforeach
