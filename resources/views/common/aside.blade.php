@@ -309,7 +309,7 @@
             <div class="d-flex h-100 flex-column">
                 <div class="flex-column-fluid hover-scroll-y" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-wrappers="#kt_aside_wordspace" data-kt-scroll-dependencies="#aside-secondary-footer" data-kt-scroll-offset="0px">
                     <div class="tab-content">
-                        <div class="tab-pane fade @if(Route::is('panel.' . get_current_panel() . '.dashboard')) active show @endif" id="aside_menu_dashboard" role="tabpanel">
+                        <div class="tab-pane fade @if(Route::is('panel.' . get_current_panel() . '.dashboard') && empty(\JobMetric\Panelio\Facades\Panelio::getDashboardLinks(get_current_panel()))) active show @endif" id="aside_menu_dashboard" role="tabpanel">
                             <div class="mx-5">
                                 <h3 class="fw-bold text-dark mb-10 mx-0">{{ trans('panelio::base.section.dashboard.title') }}</h3>
                                 <div class="mb-12">
