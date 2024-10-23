@@ -5,7 +5,3 @@
         data-kt-aside-minimize="on"
     @endif
 @endsection
-
-@section('body')
-
-@endsection

@@ -21,7 +21,7 @@
 
 @section('content')
     <script>var defaultThemeMode = "light";
-        var themeMode;
+        let themeMode;
         if (document.documentElement) {
             if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
                 themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
