@@ -9,6 +9,7 @@ use JobMetric\PackageCore\Exceptions\RegisterClassTypeNotFoundException;
 use JobMetric\PackageCore\PackageCore;
 use JobMetric\PackageCore\PackageCoreServiceProvider;
 use JobMetric\Panelio\View\Components\TileLink;
+use JobMetric\Panelio\View\Components\TileStatistics;
 
 class PanelioServiceProvider extends PackageCoreServiceProvider
 {
@@ -53,6 +54,7 @@ class PanelioServiceProvider extends PackageCoreServiceProvider
     {
         // add alias for components
         Blade::component(TileLink::class, 'tile-link');
+        Blade::component(TileStatistics::class, 'tile-statistics');
 
         addLanguageScript();
     }
