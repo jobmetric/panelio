@@ -110,7 +110,7 @@
                     <div class="row g-0 m-2">
                         @foreach(\JobMetric\Panelio\Facades\Panelio::getPanels() as $panel)
                             <div class="col-12">
-                                <a href="p/{{ $panel['slug'] }}" target="_blank">
+                                <a href="p/{{ $panel['slug'] }}">
                                     <div class="d-flex justify-content-between align-items-center p-2 px-4 bg-hover-light-dark rounded rounded-2">
                                         <div class="d-flex align-items-center">
                                             <div class="symbol-label fs-2 fw-semibold bg-gray-100 px-4 pt-3 rounded rounded-2">
@@ -386,7 +386,7 @@
                     </div>
                 </div>
                 <div class="flex-column-auto pt-10 px-5" id="aside-secondary-footer">
-                    <a href="/" class="btn btn-bg-light btn-color-gray-600 btn-flex btn-active-color-primary flex-center w-100">
+                    <a href="/" class="btn btn-bg-light btn-color-gray-600 btn-flex btn-active-color-primary flex-center w-100" target="_blank">
                         <span class="btn-label">{{ trans('panelio::base.show_website') }}</span>
                         <i class="ki-duotone ki-document btn-icon fs-4 ms-2">
                             <span class="path1"></span>
