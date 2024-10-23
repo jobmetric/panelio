@@ -6,12 +6,15 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Button extends Component
+class TileLink extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(
+        public string $name,
+        public string $link = 'javascript:void(0)',
+    )
     {
     }
 
@@ -20,6 +23,6 @@ class Button extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('panelio::components.button');
+        return view('panelio::components.tile-link');
     }
 }

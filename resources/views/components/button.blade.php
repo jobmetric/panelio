@@ -1,3 +1,0 @@
-<div>
-    button component
-</div>

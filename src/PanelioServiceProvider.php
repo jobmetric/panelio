@@ -8,6 +8,7 @@ use JobMetric\PackageCore\Exceptions\AssetFolderNotFoundException;
 use JobMetric\PackageCore\Exceptions\RegisterClassTypeNotFoundException;
 use JobMetric\PackageCore\PackageCore;
 use JobMetric\PackageCore\PackageCoreServiceProvider;
+use JobMetric\Panelio\View\Components\TileLink;
 
 class PanelioServiceProvider extends PackageCoreServiceProvider
 {
@@ -51,7 +52,7 @@ class PanelioServiceProvider extends PackageCoreServiceProvider
     public function afterBootPackage(): void
     {
         // add alias for components
-        Blade::component('panelio::components.button', 'button');
+        Blade::component(TileLink::class, 'tile-link');
 
         addLanguageScript();
     }
