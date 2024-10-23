@@ -2,12 +2,18 @@
 
 namespace JobMetric\Panelio;
 
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Illuminate\Routing\Middleware\SubstituteBindings;
+use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Blade;
-use JobMetric\Category\Events\CategoryTypeEvent;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
+use JobMetric\Language\Http\Middleware\SetLanguageMiddleware;
 use JobMetric\PackageCore\Exceptions\AssetFolderNotFoundException;
 use JobMetric\PackageCore\Exceptions\RegisterClassTypeNotFoundException;
 use JobMetric\PackageCore\PackageCore;
 use JobMetric\PackageCore\PackageCoreServiceProvider;
+use JobMetric\Panelio\Facades\Middleware;
+use JobMetric\Panelio\Http\Middleware\AuthMiddleware;
 use JobMetric\Panelio\View\Components\TileLink;
 use JobMetric\Panelio\View\Components\TileStatistics;
 
@@ -43,6 +49,10 @@ class PanelioServiceProvider extends PackageCoreServiceProvider
         $this->app->singleton('panelio', function () {
             return [];
         });
+
+        $this->app->singleton('panelio_middleware', function () {
+            return [];
+        });
     }
 
     /**
@@ -52,6 +62,14 @@ class PanelioServiceProvider extends PackageCoreServiceProvider
      */
     public function afterBootPackage(): void
     {
+        // add middleware
+        Middleware::addMiddleware(AddQueuedCookiesToResponse::class);
+        Middleware::addMiddleware(StartSession::class, 10);
+        Middleware::addMiddleware(ShareErrorsFromSession::class, 20);
+        Middleware::addMiddleware(SubstituteBindings::class, 30);
+        Middleware::addMiddleware(SetLanguageMiddleware::class, 40);
+        Middleware::addMiddleware(AuthMiddleware::class, 50);
+
         // add alias for components
         Blade::component(TileLink::class, 'tile-link');
         Blade::component(TileStatistics::class, 'tile-statistics');
