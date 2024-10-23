@@ -9,7 +9,7 @@
             <div class="hover-scroll-overlay-y mb-5 scroll-ms px-5" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto" data-kt-scroll-wrappers="#kt_aside_nav" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-offset="0px">
                 <ul class="nav flex-column w-100" id="kt_aside_nav_tabs">
                     <li class="nav-item mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans('panelio::base.section.dashboard.name') }}">
-                        <a class="nav-link btn btn-icon btn-active-color-primary btn-color-gray-400 btn-active-light @if(Route::is('panel.' . get_current_panel() . '.dashboard')) active @endif" @if(Route::is('panel.' . get_current_panel() . '.dashboard')) data-bs-toggle="tab" href="#aside_menu_dashboard" @else href="{{ route('admin.dashboard') }}" @endif>
+                        <a class="nav-link btn btn-icon btn-active-color-primary btn-color-gray-400 btn-active-light @if(Route::is('panel.' . get_current_panel() . '.dashboard')) active @endif" @if(Route::is('panel.' . get_current_panel() . '.dashboard')) data-bs-toggle="tab" href="#aside_menu_dashboard" @else href="{{ route('panel.' . get_current_panel() . '.dashboard') }}" @endif>
                             <i class="ki-duotone ki-element-11 fs-2x">
                                 <span class="path1"></span>
                                 <span class="path2"></span>
@@ -18,10 +18,10 @@
                             </i>
                         </a>
                     </li>
-                    @foreach(\JobMetric\Panelio\Facades\Panelio::getSections(get_current_panel()) as $panel)
-                        <li class="nav-item mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans($panel['name']) }}">
-                            <a class="nav-link btn btn-icon btn-active-color-primary btn-color-gray-400 btn-active-light @if(Route::is('panel.' . get_current_panel() . '.' . $panel['slug'] . '.*')) active @endif" data-bs-toggle="tab" href="#aside_menu_{{ $panel['slug'] }}">
-                                {!! $panel['args']['icon'] !!}
+                    @foreach(\JobMetric\Panelio\Facades\Panelio::getSections(get_current_panel()) as $section)
+                        <li class="nav-item mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-dismiss="click" title="{{ trans($section['name']) }}">
+                            <a class="nav-link btn btn-icon btn-active-color-primary btn-color-gray-400 btn-active-light @if(\Illuminate\Support\Facades\Request::is('p/' . get_current_panel() . '/' . $section['slug'] . '/*')) active @endif" data-bs-toggle="tab" href="#aside_menu_{{ $section['slug'] }}">
+                                {!! $section['args']['icon'] !!}
                             </a>
                         </li>
                     @endforeach
@@ -327,7 +327,7 @@
                             </div>
                         </div>
                         @foreach(\JobMetric\Panelio\Facades\Panelio::getSections(get_current_panel()) as $section)
-                            <div class="tab-pane fade @if(Route::is('panel.' . get_current_panel() . '.' . $section['slug'] . '.*')) active show @endif" id="aside_menu_{{ $section['slug'] }}" role="tabpanel">
+                            <div class="tab-pane fade @if(\Illuminate\Support\Facades\Request::is('p/' . get_current_panel() . '/' . $section['slug'] . '/*')) active show @endif" id="aside_menu_{{ $section['slug'] }}" role="tabpanel">
                                 <div class="mx-5">
                                     <h3 class="fw-bold text-dark mb-10 mx-0">{{ trans($section['args']['title']) }}</h3>
                                 </div>
@@ -343,7 +343,7 @@
                                             @else
                                                 @if(empty($menu['submenus']))
                                                     <div class="menu-item">
-                                                        <a class="menu-link @if(\Illuminate\Support\Facades\Request::is($menu['link'])) active @endif" href="{{ $menu['link'] }}">
+                                                        <a class="menu-link @if(\Illuminate\Support\Facades\Request::is(ltrim(parse_url($menu['link'], PHP_URL_PATH), '/'))) active @endif" href="{{ $menu['link'] }}">
                                                             <span class="menu-icon">
                                                                 {!! $menu['icon'] !!}
                                                             </span>
