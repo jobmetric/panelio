@@ -16,6 +16,7 @@ return [
         "panel_not_found" => "Panel :panel not found.",
         "section_in_panel_not_found" => "Section :section in Panel :panel not found.",
         "menu_in_section_panel_not_found" => "Menu :menu_name in Section :section in Panel :panel not found.",
+        "button_not_found" => "Button :button not found.",
     ],
 
     'section' => [
@@ -47,5 +48,29 @@ return [
     ],
 
     'show_website' => 'Show Website',
+
+    'button' => [
+        'operation' => 'Operation',
+        'select_option' => 'Choose an option',
+        'save' => 'Save',
+        'save_close' => 'Save & Close',
+        'save_new' => 'Save & New',
+        'cancel' => 'Cancel',
+        'add' => 'Add',
+        'export' => 'Export',
+        'import' => 'Import',
+        'status' => [
+            'enable' => 'Enable',
+            'disable' => 'Disable',
+        ],
+        'block' => 'Block',
+        'unblock' => 'Unblock',
+        'bulk' => 'Bulk Action',
+        'setting' => 'Setting',
+        'help' => 'Help',
+
+        'delete' => 'Delete',
+        'recycle' => 'Recycle',
+    ],
 
 ];

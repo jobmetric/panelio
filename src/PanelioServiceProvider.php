@@ -8,12 +8,14 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use JobMetric\Language\Http\Middleware\SetLanguageMiddleware;
+use JobMetric\PackageCore\Enums\RegisterClassTypeEnum;
 use JobMetric\PackageCore\Exceptions\AssetFolderNotFoundException;
 use JobMetric\PackageCore\Exceptions\RegisterClassTypeNotFoundException;
 use JobMetric\PackageCore\PackageCore;
 use JobMetric\PackageCore\PackageCoreServiceProvider;
 use JobMetric\Panelio\Facades\Middleware;
 use JobMetric\Panelio\Http\Middleware\AuthMiddleware;
+use JobMetric\Panelio\Services\Button;
 use JobMetric\Panelio\View\Components\TileLink;
 use JobMetric\Panelio\View\Components\TileStatistics;
 
@@ -36,7 +38,8 @@ class PanelioServiceProvider extends PackageCoreServiceProvider
             ->hasRoute()
             ->hasAsset()
             ->hasComponent()
-            ->registerClass('Panelio', Panelio::class);
+            ->registerClass('Panelio', Panelio::class)
+            ->registerClass('Button', Button::class, RegisterClassTypeEnum::SINGLETON());
     }
 
     /**

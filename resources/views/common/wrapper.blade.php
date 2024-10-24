@@ -29,6 +29,7 @@
                 </a>
             </div>
             <div class="d-flex flex-shrink-0">
+                @include('panelio::common.button')
                 @yield('buttons')
             </div>
         </div>

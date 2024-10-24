@@ -16,6 +16,7 @@ return [
         "panel_not_found" => "پنل :panel موجود نیست.",
         "section_in_panel_not_found" => "بخش :section در پنل :panel موجود نیست.",
         "menu_in_section_panel_not_found" => "منو :menu_name در بخش :section در پنل :panel موجود نیست.",
+        "button_not_found" => "دکمه :button موجود نیست.",
     ],
 
     'section' => [
@@ -47,5 +48,29 @@ return [
     ],
 
     'show_website' => 'نمایش وب سایت',
+
+    'button' => [
+        'operation' => 'عملیات',
+        'select_option' => 'یک گزینه انتخاب کنید',
+        'save' => 'ذخیره',
+        'save_close' => 'ذخیره و بستن',
+        'save_new' => 'ذخیره و جدید',
+        'cancel' => 'انصراف',
+        'add' => 'افزودن',
+        'export' => 'خروجی',
+        'import' => 'بارگذاری',
+        'status' => [
+            'enable' => 'فعال',
+            'disable' => 'غیر فعال',
+        ],
+        'block' => 'محروم',
+        'unblock' => 'عدم محرومیت',
+        'bulk' => 'کار دسته جمعی',
+        'setting' => 'تنظیمات',
+        'help' => 'راهنما',
+
+        'delete' => 'حذف',
+        'recycle' => 'بازیافت',
+    ],
 
 ];
