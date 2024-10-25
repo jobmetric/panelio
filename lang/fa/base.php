@@ -66,8 +66,11 @@ return [
         'block' => 'محروم',
         'unblock' => 'عدم محرومیت',
         'bulk' => 'کار دسته جمعی',
+        'bulk_title' => 'کار دسته جمعی',
         'setting' => 'تنظیمات',
+        'setting_title' => 'تنظیمات نمایش',
         'help' => 'راهنما',
+        'help_title' => 'راهنمای صفحه',
 
         'delete' => 'حذف',
         'recycle' => 'بازیافت',

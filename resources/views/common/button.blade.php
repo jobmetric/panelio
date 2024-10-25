@@ -27,7 +27,7 @@
         </button>
         @if($button_save_close !== false)
             <div class="btn-group dropdown-menu-end" role="group">
-                <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-big-cursor" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                <button type="button" class="btn btn-sm btn-primary dropdown-toggle @if(trans('domi::base.direction') == 'rtl') dropdown-big-cursor-rtl @else dropdown-big-cursor @endif" data-bs-toggle="dropdown" aria-expanded="false"></button>
                 <div class="dropdown-menu">
                     <button type="submit" name="save" value="save.close" class="dropdown-item btn-sm" form="form">
                         <i class="la la-check-square text-primary fs-2 position-absolute"></i>
@@ -68,7 +68,7 @@
 
 @if($button_add_modal !== false)
     <div class="btn-group ms-3" role="group">
-        <a href="javascript:alert('not complete')" class="btn btn-sm btn-primary">
+        <a href="javascript:alert('not complete')" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-button-add">
             <i class="la la-plus fs-2 position-absolute"></i>
             <span class="ps-9">{{ trans($button_add_modal['title']) }}</span>
         </a>
@@ -95,7 +95,7 @@
 
     <div class="btn-group ms-3" role="group">
         <div class="dropdown dropdown-menu-end">
-            <button type="button" class="btn btn-sm btn-info dropdown-toggle dropdown-big-cursor pe-12" data-bs-toggle="dropdown">
+            <button type="button" class="btn btn-sm btn-info dropdown-toggle @if(trans('domi::base.direction') == 'rtl') dropdown-big-cursor-rtl @else dropdown-big-cursor @endif pe-12" data-bs-toggle="dropdown">
                 <i class="la la-gear fs-2 position-absolute"></i>
                 <span class="ps-9">{{ trans('panelio::base.button.operation') }}</span>
             </button>
@@ -156,7 +156,7 @@
                 @endif
                 @if($button_bulk !== false)
                     <li>
-                        <a class="dropdown-item" href="javascript:alert('bulk not complete')">
+                        <a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modal-button-bulk">
                             <i class="la la-adjust fs-2 position-absolute"></i>
                             <span class="ms-10">{{ trans($button_bulk['title']) }}</span>
                         </a>
@@ -165,7 +165,7 @@
                 @endif
                 @if($button_setting !== false)
                     <li>
-                        <a class="dropdown-item" href="javascript:alert('setting not complete')">
+                        <a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modal-button-setting">
                             <i class="la la-cogs fs-2 position-absolute"></i>
                             <span class="ms-10">{{ trans($button_setting['title']) }}</span>
                         </a>
@@ -176,7 +176,7 @@
                     @foreach($button_link as $item)
                         <li>
                             <a class="dropdown-item" href="{{ $item['url'] }}">
-                                <i class="la la-link fs-2 position-absolute"></i>
+                                <i class="{{ $item['icon'] }} fs-2 position-absolute"></i>
                                 <span class="ms-10">{{ trans($item['title']) }}</span>
                             </a>
                         </li>
@@ -185,7 +185,7 @@
                 @endif
                 @if($button_help !== false)
                     <li>
-                        <a class="dropdown-item" href="javascript:alert('help not complete')">
+                        <a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modal-button-help">
                             <i class="la la-question fs-2 position-absolute"></i>
                             <span class="ms-10">{{ trans($button_help['title']) }}</span>
                         </a>

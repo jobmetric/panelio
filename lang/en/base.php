@@ -66,7 +66,9 @@ return [
         'block' => 'Block',
         'unblock' => 'Unblock',
         'bulk' => 'Bulk Action',
+        'bulk_title' => 'Bulk Actions',
         'setting' => 'Setting',
+        'setting_title' => 'Screen Options',
         'help' => 'Help',
 
         'delete' => 'Delete',
