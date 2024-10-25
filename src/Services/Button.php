@@ -158,23 +158,27 @@ class Button
     /**
      * Add Button Modal.
      *
-     * @param string|null $template modal template
-     * @param string|null $size modal size
      * @param string|null $title language key
      * @param array $modal_config modal config
      *
      * @return void
      */
-    public function addModal(string $template = null, string $size = null, string $title = null, array $modal_config = []): void
+    public function addModal(string $title = null, array $modal_config = []): void
     {
         $this->button['add_modal'] = [
-            'template' => (is_null($template)) ? null : $template,
-            'size' => (is_null($size)) ? 'modal-lg' : $size,
             'title' => (is_null($title)) ? 'panelio::base.button.add' : $title,
         ];
 
         // define modal
-        Domi::addModal('button-add', $modal_config['title'] ?? 'panelio::base.button.add', $modal_config['content'] ?? null, $modal_config['footer'] ?? null, $modal_config['options'] ?? []);
+        if (!isset($modal_config['options'])) {
+            $modal_config['options'] = [
+                'scrollable' => true,
+            ];
+        } else {
+            $modal_config['options']['scrollable'] = $modal_config['options']['scrollable'] ?? true;
+        }
+
+        Domi::addModal('button-add', $modal_config['title'] ?? 'panelio::base.button.add', $modal_config['content'] ?? null, $modal_config['footer'] ?? null, $modal_config['options']);
     }
 
     /**
@@ -252,45 +256,53 @@ class Button
     /**
      * Add Button Modal.
      *
-     * @param string|null $template modal template
-     * @param string|null $size modal size
      * @param string|null $title language key
      * @param array $modal_config modal config
      *
      * @return void
      */
-    public function bulk(string $template = null, string $size = null, string $title = null, array $modal_config = []): void
+    public function bulk(string $title = null, array $modal_config = []): void
     {
         $this->button['bulk'] = [
-            'template' => (is_null($template)) ? null : $template,
-            'size' => (is_null($size)) ? 'modal-lg' : $size,
             'title' => (is_null($title)) ? 'panelio::base.button.bulk' : $title,
         ];
 
         // define modal
-        Domi::addModal('button-bulk', 'panelio::base.button.bulk_title', $modal_config['content'] ?? null, $modal_config['footer'] ?? null, $modal_config['options'] ?? []);
+        if (!isset($modal_config['options'])) {
+            $modal_config['options'] = [
+                'scrollable' => true,
+            ];
+        } else {
+            $modal_config['options']['scrollable'] = $modal_config['options']['scrollable'] ?? true;
+        }
+
+        Domi::addModal('button-bulk', 'panelio::base.button.bulk_title', $modal_config['content'] ?? null, $modal_config['footer'] ?? null, $modal_config['options']);
     }
 
     /**
      * Add Button Setting.
      *
-     * @param string|null $template modal template
-     * @param string|null $size modal size
      * @param string|null $title language key
      * @param array $modal_config modal config
      *
      * @return void
      */
-    public function setting(string $template = null, string $size = null, string $title = null, array $modal_config = []): void
+    public function setting(string $title = null, array $modal_config = []): void
     {
         $this->button['setting'] = [
-            'template' => (is_null($template)) ? null : $template,
-            'size' => (is_null($size)) ? 'modal-lg' : $size,
             'title' => (is_null($title)) ? 'panelio::base.button.setting' : $title,
         ];
 
         // define modal
-        Domi::addModal('button-setting', 'panelio::base.button.setting_title', $modal_config['content'] ?? null, $modal_config['footer'] ?? null, $modal_config['options'] ?? []);
+        if (!isset($modal_config['options'])) {
+            $modal_config['options'] = [
+                'scrollable' => true,
+            ];
+        } else {
+            $modal_config['options']['scrollable'] = $modal_config['options']['scrollable'] ?? true;
+        }
+
+        Domi::addModal('button-setting', 'panelio::base.button.setting_title', $modal_config['content'] ?? null, $modal_config['footer'] ?? null, $modal_config['options']);
     }
 
     /**
@@ -314,18 +326,14 @@ class Button
     /**
      * Add Button Help.
      *
-     * @param string|null $template modal template
-     * @param string|null $size modal size
      * @param string|null $title language key
      * @param array $modal_config modal config
      *
      * @return void
      */
-    public function help(string $template = null, string $size = null, string $title = null, array $modal_config = []): void
+    public function help(string $title = null, array $modal_config = []): void
     {
         $this->button['help'] = [
-            'template' => (is_null($template)) ? null : $template,
-            'size' => (is_null($size)) ? 'modal-lg' : $size,
             'title' => (is_null($title)) ? 'panelio::base.button.help' : $title,
         ];
 

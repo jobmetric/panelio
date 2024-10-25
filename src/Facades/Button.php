@@ -11,15 +11,15 @@ use Illuminate\Support\Facades\Facade;
  * @method static void saveNew(string $title = null, string $form = null)
  * @method static void cancel(string $url = null, string $title = null)
  * @method static void add(string $url = null, string $title = null)
- * @method static void addModal(string $template = null, string $size = null, string $title = null, array $modal_config = [])
+ * @method static void addModal(string $title = null, array $modal_config = [])
  * @method static void status(string $title_enable = null, string $title_disable = null)
  * @method static void block(string $title_block = null, string $title_unblock = null)
  * @method static void import(string $type = null, string $title = null)
  * @method static void export(string $type = null, string $title = null)
- * @method static void bulk(string $template = null, string $size = null, string $title = null, array $modal_config = [])
- * @method static void setting(string $template = null, string $size = null, string $title = null, array $modal_config = [])
+ * @method static void bulk(string $title = null, array $modal_config = [])
+ * @method static void setting(string $title = null, array $modal_config = [])
  * @method static void link(string $title, string $url)
- * @method static void help(string $template = null, string $size = null, string $title = null, array $modal_config = [])
+ * @method static void help(string $title = null, array $modal_config = [])
  *
  * @see \JobMetric\Panelio\Services\Button
  */
