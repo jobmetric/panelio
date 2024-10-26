@@ -56,6 +56,14 @@ class PanelioServiceProvider extends PackageCoreServiceProvider
         $this->app->singleton('panelio_middleware', function () {
             return [];
         });
+
+        // add middleware
+        Middleware::addMiddleware(AddQueuedCookiesToResponse::class);
+        Middleware::addMiddleware(StartSession::class, 10);
+        Middleware::addMiddleware(ShareErrorsFromSession::class, 20);
+        Middleware::addMiddleware(SubstituteBindings::class, 30);
+        Middleware::addMiddleware(SetLanguageMiddleware::class, 40);
+        Middleware::addMiddleware(AuthMiddleware::class, 50);
     }
 
     /**
@@ -65,14 +73,6 @@ class PanelioServiceProvider extends PackageCoreServiceProvider
      */
     public function afterBootPackage(): void
     {
-        // add middleware
-        Middleware::addMiddleware(AddQueuedCookiesToResponse::class);
-        Middleware::addMiddleware(StartSession::class, 10);
-        Middleware::addMiddleware(ShareErrorsFromSession::class, 20);
-        Middleware::addMiddleware(SubstituteBindings::class, 30);
-        Middleware::addMiddleware(SetLanguageMiddleware::class, 40);
-        Middleware::addMiddleware(AuthMiddleware::class, 50);
-
         // add alias for components
         Blade::component(TileLink::class, 'tile-link');
         Blade::component(TileStatistics::class, 'tile-statistics');
