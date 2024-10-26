@@ -345,7 +345,7 @@
                                                     <div class="menu-item">
                                                         <a class="menu-link @if(\Illuminate\Support\Facades\Request::is(ltrim(parse_url($menu['link'], PHP_URL_PATH), '/'))) active @endif" href="{{ $menu['link'] }}">
                                                             <span class="menu-icon">
-                                                                {!! $menu['icon'] !!}
+                                                                {!! str_replace('{class}', 'fs-2', $menu['icon']) !!}
                                                             </span>
                                                             <span class="menu-title">{{ trans($menu['name']) }}</span>
                                                         </a>
