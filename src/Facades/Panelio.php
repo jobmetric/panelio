@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static array getDashboardLinks(string $panelSlug)
  * @method static void addProfileLink(string $panelSlug, array $params = [])
  * @method static array getProfileLinks(string $panelSlug)
+ * @method static array getGroupByMenu(string $panelSlug, string $sectionSlug)
  *
  * @see \JobMetric\Panelio\Panelio
  */

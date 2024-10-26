@@ -537,4 +537,52 @@ class Panelio
 
         return $profile_links;
     }
+
+    /**
+     * get group by menu
+     *
+     * @param string $panelSlug
+     * @param string $sectionSlug
+     *
+     * @return array
+     * @throws Throwable
+     */
+    public function getGroupByMenu(string $panelSlug, string $sectionSlug): array
+    {
+        $panelioMenus = $this->getMenus($panelSlug, $sectionSlug);
+
+        $structuredMenus = [];
+        $currentGroup = null;
+        $initialLinksGroup = [
+            'title' => null,
+            'links' => []
+        ];
+
+        foreach ($panelioMenus as $menu) {
+            if ($menu['type'] == 'group') {
+                if (!empty($initialLinksGroup['links'])) {
+                    $structuredMenus[] = $initialLinksGroup;
+                    $initialLinksGroup['links'] = [];
+                }
+
+                $currentGroup = [
+                    'title' => $menu['name'],
+                    'links' => []
+                ];
+                $structuredMenus[] = $currentGroup;
+            } elseif ($menu['type'] == 'link') {
+                if ($currentGroup) {
+                    $structuredMenus[count($structuredMenus) - 1]['links'][] = $menu;
+                } else {
+                    $initialLinksGroup['links'][] = $menu;
+                }
+            }
+        }
+
+        if (!empty($initialLinksGroup['links'])) {
+            $structuredMenus[] = $initialLinksGroup;
+        }
+
+        return $structuredMenus;
+    }
 }
