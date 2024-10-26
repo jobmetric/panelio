@@ -28,6 +28,7 @@ Route::prefix('panelio')->name('panelio.')->namespace('JobMetric\Panelio\Http\Co
 Route::prefix('p')->name('panel.')->group(function () {
     Route::middleware(Middleware::getMiddlewares())->group(function () {
         Route::get('/', [PanelioController::class, 'index'])->name('index');
+        Route::get('/{panel}/{section}', [PanelioController::class, 'section'])->name('section');
 
         // some panel routes
         RouteRegistry::registerRoutes();
