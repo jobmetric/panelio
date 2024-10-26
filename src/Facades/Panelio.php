@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static array getPanels()
  * @method static array getPanel(string $slug)
  * @method static void addSection(string $panelSlug, string $sectionSlug, array $params = [])
+ * @method static int getSectionKey(string $panelSlug, string $slug)
  * @method static array getSections(string $panelSlug)
  * @method static array getSection(string $panelSlug, string $slug)
  * @method static void addMenu(string $panelSlug, string $sectionSlug, array $params = [])

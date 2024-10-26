@@ -213,7 +213,7 @@ class Panelio
      * @return int
      * @throws Throwable
      */
-    private function getSectionKey(string $panelSlug, string $slug): int
+    public function getSectionKey(string $panelSlug, string $slug): int
     {
         $panel = $this->getPanel($panelSlug);
 
