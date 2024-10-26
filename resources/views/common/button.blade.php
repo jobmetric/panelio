@@ -10,7 +10,7 @@
     $button_actions = \JobMetric\Panelio\Facades\Button::get('actions');
 @endphp
 
-@if($button_save_new !== false)
+@if($button_save_new)
     <div class="btn-group ms-3" role="group">
         <button type="submit" name="save" value="save.new" class="btn btn-sm btn-primary" form="{{ $button_save_new['form'] }}">
             <i class="la la-plus fs-2 position-absolute"></i>
@@ -19,13 +19,13 @@
     </div>
 @endif
 
-@if($button_save !== false)
+@if($button_save)
     <div class="btn-group ms-3" role="group">
         <button type="submit" name="save" value="save" class="btn btn-sm btn-primary" form="{{ $button_save['form'] }}">
             <i class="la la-check fs-2 position-absolute"></i>
             <span class="ps-9">{{ trans($button_save['title']) }}</span>
         </button>
-        @if($button_save_close !== false)
+        @if($button_save_close)
             <div class="btn-group dropdown-menu-end" role="group">
                 <button type="button" class="btn btn-sm btn-primary dropdown-toggle @if(trans('domi::base.direction') == 'rtl') dropdown-big-cursor-rtl @else dropdown-big-cursor @endif" data-bs-toggle="dropdown" aria-expanded="false"></button>
                 <div class="dropdown-menu">
@@ -38,7 +38,7 @@
         @endif
     </div>
 @else
-    @if($button_save_close !== false)
+    @if($button_save_close)
         <div class="btn-group ms-3" role="group">
             <button type="submit" name="save" value="save.close" class="btn btn-sm btn-primary" form="{{ $button_save_close['form'] }}">
                 <i class="la la-check-square fs-2 position-absolute"></i>
@@ -48,7 +48,7 @@
     @endif
 @endif
 
-@if($button_cancel !== false)
+@if($button_cancel)
     <div class="btn-group ms-3" role="group">
         <a href="{{ $button_cancel['url'] }}" class="btn btn-sm btn-default">
             <i class="la @if(trans('domi::base.direction') == 'rtl') la-undo @else la-redo @endif text-danger fs-2 position-absolute"></i>
@@ -57,7 +57,7 @@
     </div>
 @endif
 
-@if($button_add !== false)
+@if($button_add)
     <div class="btn-group ms-3" role="group">
         <a href="{{ $button_add['url'] }}" class="btn btn-sm btn-primary">
             <i class="la la-plus fs-2 position-absolute"></i>
@@ -66,7 +66,7 @@
     </div>
 @endif
 
-@if($button_add_modal !== false)
+@if($button_add_modal)
     <div class="btn-group ms-3" role="group">
         <a href="javascript:alert('not complete')" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-button-add">
             <i class="la la-plus fs-2 position-absolute"></i>
@@ -75,13 +75,13 @@
     </div>
 @endif
 
-@if($button_recycle !== false)
+@if($button_recycle)
 @endif
 
-@if($button_delete !== false)
+@if($button_delete)
 @endif
 
-@if($button_actions !== false)
+@if($button_actions)
     @php
         $button_export = \JobMetric\Panelio\Facades\Button::get('export');
         $button_import = \JobMetric\Panelio\Facades\Button::get('import');
@@ -105,7 +105,7 @@
                     <i class="la la-info-circle fs-2"></i>
                 </li>
                 <li><hr class="dropdown-divider"></li>
-                @if($button_status !== false)
+                @if($button_status)
                     <li>
                         <a class="dropdown-item" href="javascript:alert('enable not complete')">
                             <i class="la la-check text-success fs-2 position-absolute"></i>
@@ -120,7 +120,7 @@
                     </li>
                     <li><hr class="dropdown-divider"></li>
                 @endif
-                @if($button_block !== false)
+                @if($button_block)
                     <li>
                         <a class="dropdown-item" href="javascript:alert('block not complete')">
                             <i class="la la-ban text-danger fs-2 position-absolute"></i>
@@ -135,7 +135,7 @@
                     </li>
                     <li><hr class="dropdown-divider"></li>
                 @endif
-                @if($button_export !== false)
+                @if($button_export)
                     <li>
                         <a class="dropdown-item" href="javascript:alert('export type: {{ $button_export['type'] }}')">
                             <i class="la la-download text-info fs-2 position-absolute"></i>
@@ -143,7 +143,7 @@
                         </a>
                     </li>
                 @endif
-                @if($button_import !== false)
+                @if($button_import)
                     <li>
                         <a class="dropdown-item" href="javascript:alert('import type: {{ $button_import['type'] }}')">
                             <i class="la la-upload text-info fs-2 position-absolute"></i>
@@ -151,10 +151,10 @@
                         </a>
                     </li>
                 @endif
-                @if($button_export !== false || $button_import !== false)
+                @if($button_export || $button_import)
                     <li><hr class="dropdown-divider"></li>
                 @endif
-                @if($button_bulk !== false)
+                @if($button_bulk)
                     <li>
                         <a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modal-button-bulk">
                             <i class="la la-adjust fs-2 position-absolute"></i>
@@ -163,7 +163,7 @@
                     </li>
                     <li><hr class="dropdown-divider"></li>
                 @endif
-                @if($button_setting !== false)
+                @if($button_setting)
                     <li>
                         <a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modal-button-setting">
                             <i class="la la-cogs fs-2 position-absolute"></i>
@@ -172,7 +172,7 @@
                     </li>
                     <li><hr class="dropdown-divider"></li>
                 @endif
-                @if($button_link !== false)
+                @if($button_link)
                     @foreach($button_link as $item)
                         <li>
                             <a class="dropdown-item" href="{{ $item['url'] }}">
@@ -183,7 +183,7 @@
                     @endforeach
                     <li><hr class="dropdown-divider"></li>
                 @endif
-                @if($button_help !== false)
+                @if($button_help)
                     <li>
                         <a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modal-button-help">
                             <i class="la la-question fs-2 position-absolute"></i>

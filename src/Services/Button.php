@@ -267,6 +267,8 @@ class Button
             'title' => (is_null($title)) ? 'panelio::base.button.bulk' : $title,
         ];
 
+        $this->button['actions'] = true;
+
         // define modal
         if (!isset($modal_config['options'])) {
             $modal_config['options'] = [
@@ -292,6 +294,8 @@ class Button
         $this->button['setting'] = [
             'title' => (is_null($title)) ? 'panelio::base.button.setting' : $title,
         ];
+
+        $this->button['actions'] = true;
 
         // define modal
         if (!isset($modal_config['options'])) {
@@ -321,6 +325,8 @@ class Button
             'url' => $url,
             'icon' => (is_null($icon_class)) ? 'la la-link' : $icon_class,
         ];
+
+        $this->button['actions'] = true;
     }
 
     /**
@@ -336,6 +342,8 @@ class Button
         $this->button['help'] = [
             'title' => (is_null($title)) ? 'panelio::base.button.help' : $title,
         ];
+
+        $this->button['actions'] = true;
 
         // define modal
         if (!isset($modal_config['options'])) {
