@@ -76,4 +76,6 @@ return [
         'recycle' => 'بازیافت',
     ],
 
+    'dashboard' => 'داشبورد'
+
 ];

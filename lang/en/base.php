@@ -75,4 +75,6 @@ return [
         'recycle' => 'Recycle',
     ],
 
+    'dashboard' => 'Dashboard',
+
 ];
