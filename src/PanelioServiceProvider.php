@@ -16,6 +16,7 @@ use JobMetric\PackageCore\PackageCoreServiceProvider;
 use JobMetric\Panelio\Facades\Middleware;
 use JobMetric\Panelio\Http\Middleware\AuthMiddleware;
 use JobMetric\Panelio\Services\Button;
+use JobMetric\Panelio\View\Components\ListView;
 use JobMetric\Panelio\View\Components\TileLink;
 use JobMetric\Panelio\View\Components\TileStatistics;
 
@@ -76,6 +77,7 @@ class PanelioServiceProvider extends PackageCoreServiceProvider
         // add alias for components
         Blade::component(TileLink::class, 'tile-link');
         Blade::component(TileStatistics::class, 'tile-statistics');
+        Blade::component(ListView::class, 'list-view');
 
         addLanguageScript();
     }

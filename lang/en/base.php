@@ -73,8 +73,17 @@ return [
 
         'delete' => 'Delete',
         'recycle' => 'Recycle',
+        'edit' => 'Edit',
     ],
 
     'dashboard' => 'Dashboard',
+
+    'component' => [
+        'list_view' => [
+            'title' => 'list :name',
+            'search' => 'Search',
+            'filter' => 'Filter',
+        ],
+    ],
 
 ];

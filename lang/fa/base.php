@@ -74,8 +74,18 @@ return [
 
         'delete' => 'حذف',
         'recycle' => 'بازیافت',
+        'edit' => 'ویرایش',
     ],
 
-    'dashboard' => 'داشبورد'
+    'dashboard' => 'داشبورد',
+
+    'component' => [
+        'list_view' => [
+            'title' => 'لیست :name',
+            'search' => 'جستجو',
+            'filter' => 'فیلتر',
+            'delete_filters' => 'حذف فیلترها',
+        ],
+    ],
 
 ];
