@@ -15,6 +15,7 @@ use JobMetric\PackageCore\PackageCore;
 use JobMetric\PackageCore\PackageCoreServiceProvider;
 use JobMetric\Panelio\Facades\Middleware;
 use JobMetric\Panelio\Http\Middleware\AuthMiddleware;
+use JobMetric\Panelio\Http\Middleware\SetDomiLocalizeMiddleware;
 use JobMetric\Panelio\Services\Button;
 use JobMetric\Panelio\View\Components\ListView;
 use JobMetric\Panelio\View\Components\TileLink;
@@ -64,6 +65,7 @@ class PanelioServiceProvider extends PackageCoreServiceProvider
         Middleware::addMiddleware(ShareErrorsFromSession::class, 20);
         Middleware::addMiddleware(SubstituteBindings::class, 30);
         Middleware::addMiddleware(SetLanguageMiddleware::class, 40);
+        Middleware::addMiddleware(SetDomiLocalizeMiddleware::class, 45);
         Middleware::addMiddleware(AuthMiddleware::class, 50);
     }
 
