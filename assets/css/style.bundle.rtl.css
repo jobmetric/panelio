@@ -2137,6 +2137,12 @@ progress {
   padding: 0.5rem 0.5rem;
 }
 
+.table-bordered {
+    border: 1px solid var(--bs-gray-200);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
 .table-bordered > :not(caption) > * {
   border-width: 1px 0;
 }
