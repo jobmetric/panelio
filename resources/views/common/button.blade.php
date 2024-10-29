@@ -107,13 +107,13 @@
                 <li><hr class="dropdown-divider"></li>
                 @if($button_status)
                     <li>
-                        <a class="dropdown-item" href="javascript:alert('enable not complete')">
+                        <a class="dropdown-item" href="javascript:panelio.button.status.enable()">
                             <i class="la la-check text-success fs-2 position-absolute"></i>
                             <span class="ms-10">{{ trans($button_status['title_enable']) }}</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="javascript:alert('disable not complete')">
+                        <a class="dropdown-item" href="javascript:panelio.button.status.disable()">
                             <i class="la la-close text-danger fs-2 position-absolute"></i>
                             <span class="ms-10">{{ trans($button_status['title_disable']) }}</span>
                         </a>
