@@ -1,3 +1,9 @@
+@if(session()->has('success'))
+    <div class="alert alert-success d-flex justify-content-between" role="alert">
+        {{ session()->get('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">
@@ -31,7 +37,7 @@
                 {{ $filter ?? '' }}
             </div>
         </div>
-        <form method="post" action="" id="form">
+        <form method="post" action="{{ $action }}" id="list-form">
             @csrf
             <div class="dataTables_wrapper">
                 <table class="table table-bordered table-striped table-hover table-check dataTable" id="datatable">
