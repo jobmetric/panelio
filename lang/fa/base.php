@@ -75,6 +75,7 @@ return [
         'delete' => 'حذف',
         'recycle' => 'بازیافت',
         'edit' => 'ویرایش',
+        'realized' => 'متوجه شدم',
     ],
 
     'dashboard' => 'داشبورد',
@@ -85,6 +86,13 @@ return [
             'search' => 'جستجو',
             'filter' => 'فیلتر',
             'delete_filters' => 'حذف فیلترها',
+        ],
+    ],
+
+    'message' => [
+        'status' => [
+            'enable' => 'تعداد :count مورد فعال شد.',
+            'disable' => 'تعداد :count مورد غیر فعال شد.',
         ],
     ],
 

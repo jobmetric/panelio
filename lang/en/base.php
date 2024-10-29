@@ -74,6 +74,7 @@ return [
         'delete' => 'Delete',
         'recycle' => 'Recycle',
         'edit' => 'Edit',
+        'realized' => 'Realized',
     ],
 
     'dashboard' => 'Dashboard',
@@ -83,6 +84,13 @@ return [
             'title' => 'list :name',
             'search' => 'Search',
             'filter' => 'Filter',
+        ],
+    ],
+
+    'message' => [
+        'status' => [
+            'enable' => 'Item :count status changed to active.',
+            'disable' => 'Item :count status changed to inactive.',
         ],
     ],
 
