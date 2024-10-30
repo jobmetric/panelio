@@ -122,13 +122,13 @@
                 @endif
                 @if($button_block)
                     <li>
-                        <a class="dropdown-item" href="javascript:alert('block not complete')">
+                        <a class="dropdown-item" href="javascript:panelio.button.block()">
                             <i class="la la-ban text-danger fs-2 position-absolute"></i>
                             <span class="ms-10">{{ trans($button_block['title_block']) }}</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="javascript:alert('unblock not complete')">
+                        <a class="dropdown-item" href="javascript:panelio.button.unblock()">
                             <i class="la la-retweet text-success fs-2 position-absolute"></i>
                             <span class="ms-10">{{ trans($button_block['title_unblock']) }}</span>
                         </a>
@@ -137,7 +137,7 @@
                 @endif
                 @if($button_export)
                     <li>
-                        <a class="dropdown-item" href="javascript:alert('export type: {{ $button_export['type'] }}')">
+                        <a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modal-button-export">
                             <i class="la la-download text-info fs-2 position-absolute"></i>
                             <span class="ms-10">{{ trans($button_export['title']) }}</span>
                         </a>
@@ -145,7 +145,7 @@
                 @endif
                 @if($button_import)
                     <li>
-                        <a class="dropdown-item" href="javascript:alert('import type: {{ $button_import['type'] }}')">
+                        <a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modal-button-import">
                             <i class="la la-upload text-info fs-2 position-absolute"></i>
                             <span class="ms-10">{{ trans($button_import['title']) }}</span>
                         </a>
