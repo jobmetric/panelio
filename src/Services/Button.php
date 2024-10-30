@@ -2,9 +2,11 @@
 
 namespace JobMetric\Panelio\Services;
 
+use http\Exception\InvalidArgumentException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Traits\Macroable;
 use JobMetric\Domi\Facades\Domi;
+use JobMetric\Panelio\Enums\ImportExportTypeEnum;
 use JobMetric\Panelio\Exceptions\ButtonNotFoundException;
 use Throwable;
 
@@ -220,37 +222,109 @@ class Button
     /**
      * Add Button Import.
      *
-     * @param string|null $type import type null with default
+     * @param array $types import types
      * @param string|null $title language key
      *
      * @return void
+     * @throws Throwable
      */
-    public function import(string $type = null, string $title = null): void
+    public function import(array $types = [], string $title = null): void
     {
+        if (empty($types)) {
+            $types = [
+                ImportExportTypeEnum::JSON(),
+                ImportExportTypeEnum::EXCEL()
+            ];
+        } else {
+            $flag = false;
+            foreach ($types as $type) {
+                if (!in_array($type, ImportExportTypeEnum::values())) {
+                    $flag = true;
+                    break;
+                }
+            }
+
+            if ($flag) {
+                throw new InvalidArgumentException('Invalid import type');
+            }
+        }
+
         $this->button['import'] = [
-            'type' => (is_null($type)) ? null : $type,
             'title' => (is_null($title)) ? 'panelio::base.button.import' : $title,
         ];
 
         $this->button['actions'] = true;
+
+        DomiLocalize('language', [
+            'modal' => [
+                'import' => [
+                    'route_error' => trans('panelio::base.modal.import.route_error'),
+                ]
+            ]
+        ]);
+
+        $modal_config = [
+            'content' => view('panelio::modals.button-import', ['types' => $types])->render(),
+            'options' => [
+                'scrollable' => true,
+                'centered' => true
+            ],
+        ];
+        Domi::addModal('button-import', 'panelio::base.modal.import.title', $modal_config['content'], null, $modal_config['options']);
     }
 
     /**
      * Add Button Export.
      *
-     * @param string|null $type export type null with default
+     * @param array $types export type
      * @param string|null $title language key
      *
      * @return void
+     * @throws Throwable
      */
-    public function export(string $type = null, string $title = null): void
+    public function export(array $types = [], string $title = null): void
     {
+        if (empty($types)) {
+            $types = [
+                ImportExportTypeEnum::JSON(),
+                ImportExportTypeEnum::EXCEL()
+            ];
+        } else {
+            $flag = false;
+            foreach ($types as $type) {
+                if (!in_array($type, ImportExportTypeEnum::values())) {
+                    $flag = true;
+                    break;
+                }
+            }
+
+            if ($flag) {
+                throw new InvalidArgumentException('Invalid export type');
+            }
+        }
+
         $this->button['export'] = [
-            'type' => (is_null($type)) ? null : $type,
             'title' => (is_null($title)) ? 'panelio::base.button.export' : $title,
         ];
 
         $this->button['actions'] = true;
+
+        DomiLocalize('language', [
+            'modal' => [
+                'export' => [
+                    'route_error' => trans('panelio::base.modal.export.route_error'),
+                ]
+            ]
+        ]);
+
+        $modal_config = [
+            'content' => view('panelio::modals.button-export', ['types' => $types])->render(),
+            'options' => [
+                'scrollable' => true,
+                'centered' => true
+            ],
+        ];
+        Domi::addModal('button-export', 'panelio::base.modal.export.title', $modal_config['content'], null, $modal_config['options']);
     }
 
     /**
