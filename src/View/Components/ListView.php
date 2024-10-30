@@ -15,6 +15,8 @@ class ListView extends Component
     public function __construct(
         public string $name,
         public string $action,
+        public string $importAction = '',
+        public string $exportAction = '',
     )
     {
     }

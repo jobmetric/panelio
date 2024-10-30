@@ -37,7 +37,7 @@
                 {{ $filter ?? '' }}
             </div>
         </div>
-        <form method="post" action="{{ $action }}" id="list-form">
+        <form method="post" action="{{ $action }}" id="list-form" data-export="{{ $exportAction }}" data-import="{{ $importAction }}">
             @csrf
             <div class="dataTables_wrapper">
                 <table class="table table-bordered table-striped table-hover table-check dataTable" id="datatable">
