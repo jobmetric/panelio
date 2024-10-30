@@ -94,4 +94,45 @@ return [
         ],
     ],
 
+    'modal' => [
+        'import' => [
+            'title' => 'Import File',
+            'description' => 'Choose the file format you want to import.',
+            'submit' => 'Export',
+            'route_error' => 'Export route not found.',
+        ],
+        'export' => [
+            'title' => 'Export File',
+            'description' => 'Choose the file format you want to export.',
+            'submit' => 'Export',
+            'route_error' => 'Export route not found.',
+        ],
+        'import_export_options' => [
+            'json' => [
+                'name' => 'JSON',
+                'description' => 'JavaScript Object Notation',
+            ],
+            'xml' => [
+                'name' => 'XML',
+                'description' => 'Extensible Markup Language',
+            ],
+            'excel' => [
+                'name' => 'Excel',
+                'description' => 'Microsoft Excel',
+            ],
+            'word' => [
+                'name' => 'Word',
+                'description' => 'Microsoft Word',
+            ],
+            'csv' => [
+                'name' => 'CSV',
+                'description' => 'Comma Separated Values',
+            ],
+            'pdf' => [
+                'name' => 'PDF',
+                'description' => 'Portable Document Format',
+            ],
+        ],
+    ],
+
 ];

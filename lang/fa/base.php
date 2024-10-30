@@ -96,4 +96,40 @@ return [
         ],
     ],
 
+    'modal' => [
+        'import' => [],
+        'export' => [
+            'title' => 'خروجی فایل',
+            'description' => 'لطفا یک فرمت خروجی انتخاب کنید.',
+            'submit' => 'خروجی',
+            'route_error' => 'مسیر خروجی یافت نشد.',
+        ],
+        'import_export_options' => [
+            'json' => [
+                'name' => 'JSON',
+                'description' => 'خروجی فایل JSON',
+            ],
+            'xml' => [
+                'name' => 'XML',
+                'description' => 'خروجی فایل XML',
+            ],
+            'excel' => [
+                'name' => 'Excel',
+                'description' => 'خروجی فایل Excel',
+            ],
+            'word' => [
+                'name' => 'Word',
+                'description' => 'خروجی فایل Word',
+            ],
+            'csv' => [
+                'name' => 'CSV',
+                'description' => 'خروجی فایل CSV',
+            ],
+            'pdf' => [
+                'name' => 'PDF',
+                'description' => 'خروجی فایل PDF',
+            ],
+        ],
+    ],
+
 ];
