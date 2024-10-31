@@ -98,8 +98,9 @@ return [
         'import' => [
             'title' => 'Import File',
             'description' => 'Choose the file format you want to import.',
-            'submit' => 'Export',
-            'route_error' => 'Export route not found.',
+            'formats' => 'Allowed formats: :formats',
+            'submit' => 'Import',
+            'route_error' => 'Import route not found.',
         ],
         'export' => [
             'title' => 'Export File',
