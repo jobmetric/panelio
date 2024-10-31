@@ -2,7 +2,7 @@
     <div id="kt_header" class="header" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
         <div class="container-xxl d-flex align-items-center justify-content-between" id="kt_header_container">
             <div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap mt-n5 mt-lg-0 me-lg-2 pb-2 pb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#content-container', lg: '#kt_header_container'}">
-                <h1 class="text-dark fw-bold my-0 fs-2">@domi('title')</h1>
+                <h1 class="text-gray-800 fw-bold my-0 fs-2">@domi('title')</h1>
                 @if(!empty(\JobMetric\Panelio\Facades\Breadcrumb::get()))
                     <ul class="breadcrumb fw-semibold fs-base my-1">
                         @foreach(\JobMetric\Panelio\Facades\Breadcrumb::get() as $breadcrumb)
@@ -11,7 +11,7 @@
                                     <a href="{{ $breadcrumb['link'] }}" class="text-muted text-hover-primary">{{ $breadcrumb['title'] }}</a>
                                 </li>
                             @else
-                                <li class="breadcrumb-item text-dark">{{ $breadcrumb['title'] }}</li>
+                                <li class="breadcrumb-item text-gray-700">{{ $breadcrumb['title'] }}</li>
                             @endif
                         @endforeach
                     </ul>

@@ -311,7 +311,7 @@
                     <div class="tab-content">
                         <div class="tab-pane fade @if(Route::is('panel.' . get_current_panel() . '.dashboard') && empty(\JobMetric\Panelio\Facades\Panelio::getDashboardLinks(get_current_panel()))) active show @endif" id="aside_menu_dashboard" role="tabpanel">
                             <div class="mx-5">
-                                <h3 class="fw-bold text-dark mb-10 mx-0">{{ trans('panelio::base.section.dashboard.title') }}</h3>
+                                <h3 class="fw-bold text-gray-800 mb-10 mx-0">{{ trans('panelio::base.section.dashboard.title') }}</h3>
                                 <div class="mb-12">
                                     @foreach(\JobMetric\Panelio\Facades\Panelio::getDashboardLinks(get_current_panel()) as $dashboardLink)
                                         <div class="d-flex align-items-center mb-7">
@@ -329,7 +329,7 @@
                         @foreach(\JobMetric\Panelio\Facades\Panelio::getSections(get_current_panel()) as $section)
                             <div class="tab-pane fade @if(\Illuminate\Support\Facades\Request::is('p/' . get_current_panel() . '/' . $section['slug'] . '/*')) active show @endif" id="aside_menu_{{ $section['slug'] }}" role="tabpanel">
                                 <div class="mx-5">
-                                    <h3 class="fw-bold text-dark mb-10 mx-0">{{ trans($section['args']['title']) }}</h3>
+                                    <h3 class="fw-bold text-gray-800 mb-10 mx-0">{{ trans($section['args']['title']) }}</h3>
                                 </div>
                                 <div class="menu menu-column menu-fit menu-rounded menu-title-gray-600 menu-icon-gray-400 menu-state-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-semibold fs-5 px-6 my-5 my-lg-0" id="kt_aside_menu_{{ $panel['slug'] }}" data-kt-menu="true">
                                     <div id="kt_aside_menu_{{ $section['slug'] }}_wrapper" class="menu-fit">

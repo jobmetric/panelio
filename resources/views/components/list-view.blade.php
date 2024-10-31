@@ -13,7 +13,7 @@
                 <span class="path3"></span>
                 <span class="path4"></span>
             </i>
-            <span>{{ trans('panelio::base.component.list_view.title', ['name' => $name]) }}</span>
+            <span class="text-gray-800">{{ trans('panelio::base.component.list_view.title', ['name' => $name]) }}</span>
         </h3>
         <div class="card-toolbar">
             <div id="list-btn-filter-box" class="d-none">
