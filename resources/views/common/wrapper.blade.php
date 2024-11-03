@@ -36,6 +36,55 @@
     </div>
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <div class="container-xxl" id="content-container">
+
+            @session('alert-success')
+                <div class="alert alert-success d-flex justify-content-between fs-6" role="alert">
+                    {{ session('alert-success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @php session()->forget('alert-success') @endphp
+            @endsession
+
+            @session('alert-warning')
+                <div class="alert alert-warning d-flex justify-content-between fs-6" role="alert">
+                    {{ session('alert-warning') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @php session()->forget('alert-warning') @endphp
+            @endsession
+
+            @session('alert-danger')
+                <div class="alert alert-danger d-flex justify-content-between fs-6" role="alert">
+                    {{ session('alert-danger') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @php session()->forget('alert-danger') @endphp
+            @endsession
+
+            @session('alert-info')
+                <div class="alert alert-info d-flex justify-content-between fs-6" role="alert">
+                    {{ session('alert-info') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @php session()->forget('alert-info') @endphp
+            @endsession
+
+            @session('alert-primary')
+                <div class="alert alert-primary d-flex justify-content-between fs-6" role="alert">
+                    {{ session('alert-primary') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @php session()->forget('alert-primary') @endphp
+            @endsession
+
+            @session('alert-dark')
+                <div class="alert alert-dark d-flex justify-content-between fs-6" role="alert">
+                    {{ session('alert-dark') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @php session()->forget('alert-dark') @endphp
+            @endsession
+
             @yield('body')
         </div>
     </div>
