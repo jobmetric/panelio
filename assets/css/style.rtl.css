@@ -5,3 +5,7 @@
 html, body {
     font-family: "farsi-num", "font-primary", Inter, Helvetica, "sans-serif" !important;
 }
+
+:placeholder-shown {
+    direction: rtl;
+}
