@@ -18,6 +18,8 @@ return [
         "menu_in_section_panel_not_found" => "Menu ':menu_name' in Section ':section' in Panel ':panel' not found.",
         "button_not_found" => "Button ':button' not found.",
         "alert_type_not_found" => "Alert type ':type' not found.",
+        "deletes_method_not_found_in_controller" => "Method 'deletes' in controller ':class' not found.",
+        "change_status_method_not_found_in_controller" => "Method 'changeStatus' in controller ':class' not found.",
     ],
 
     "section" => [

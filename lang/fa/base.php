@@ -18,6 +18,8 @@ return [
         "menu_in_section_panel_not_found" => "منو ':menu_name' در بخش ':section' در پنل ':panel' موجود نیست.",
         "button_not_found" => "دکمه ':button' موجود نیست.",
         "alert_type_not_found" => "نوع هشدار ':type' موجود نیست.",
+        "deletes_method_not_found_in_controller" => "متد 'deletes' در کنترلر ':class' یافت نشد.",
+        "change_status_method_not_found_in_controller" => "متد 'changeStatus' در کنترلر ':class' یافت نشد.",
     ],
 
     "section" => [
