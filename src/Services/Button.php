@@ -2,7 +2,7 @@
 
 namespace JobMetric\Panelio\Services;
 
-use http\Exception\InvalidArgumentException;
+use InvalidArgumentException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Traits\Macroable;
 use JobMetric\Domi\Facades\Domi;
@@ -181,6 +181,20 @@ class Button
         }
 
         Domi::addModal('button-add', $modal_config['title'] ?? 'panelio::base.button.add', $modal_config['content'] ?? null, $modal_config['footer'] ?? null, $modal_config['options']);
+    }
+
+    /**
+     * Add Button Delete.
+     *
+     * @param string|null $title language key
+     *
+     * @return void
+     */
+    public function delete(string $title = null): void
+    {
+        $this->button['delete'] = [
+            'title' => (is_null($title)) ? 'panelio::base.button.delete' : $title,
+        ];
     }
 
     /**

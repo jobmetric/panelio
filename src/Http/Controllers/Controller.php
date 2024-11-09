@@ -4,9 +4,12 @@ namespace JobMetric\Panelio\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Controller as BaseController;
+use JobMetric\Category\Facades\Category;
 use JobMetric\PackageCore\Controllers\HasResponse;
 use JobMetric\Panelio\Exceptions\AlertTypeNotFoundException;
+use JobMetric\Panelio\Http\Requests\ActionListRequest;
 use Throwable;
 
 class Controller extends BaseController
@@ -33,5 +36,60 @@ class Controller extends BaseController
             'dark' => session()->put('alert-dark', $message),
             default => throw new AlertTypeNotFoundException($type),
         };
+    }
+
+    /**
+     * Run Actions in list
+     *
+     * @param ActionListRequest $request
+     * @param mixed $params
+     *
+     * @return RedirectResponse
+     * @throws Throwable
+     */
+    public function options(ActionListRequest $request, ...$params): RedirectResponse
+    {
+        $ids = $request->input('ids');
+        $action = $request->input('action');
+
+        $alert = null;
+        $danger = null;
+        switch ($action) {
+            case 'delete':
+                if ($this->deletes($ids, $params, $alert, $danger)) {
+                    if (!is_null($alert)) {
+                        $alert = trans('panelio::base.message.delete', ['count' => count($ids)]);
+                    }
+                }
+                break;
+            case 'status.enable':
+                try {
+                    foreach ($ids as $id) {
+                        Category::update($id, ['status' => true]);
+                    }
+                    $alert = trans('panelio::base.message.status.enable', ['count' => count($ids)]);
+                } catch (Throwable $e) {
+                    $danger = $e->getMessage();
+                }
+
+                break;
+            case 'status.disable':
+                try {
+                    foreach ($ids as $id) {
+                        Category::update($id, ['status' => false]);
+                    }
+                    $alert = trans('panelio::base.message.status.disable', ['count' => count($ids)]);
+                } catch (Throwable $e) {
+                    $danger = $e->getMessage();
+                }
+
+                break;
+        }
+
+        if ($danger) {
+            return back()->with('alert-danger', $danger);
+        }
+
+        return back()->with('alert-success', $alert);
     }
 }

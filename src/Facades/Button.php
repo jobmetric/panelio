@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static void cancel(string $url = null, string $title = null)
  * @method static void add(string $url = null, string $title = null)
  * @method static void addModal(string $title = null, array $modal_config = [])
+ * @method static void delete(string $title = null)
  * @method static void status(string $title_enable = null, string $title_disable = null)
  * @method static void block(string $title_block = null, string $title_unblock = null)
  * @method static void import(array $types = [], string $title = null)

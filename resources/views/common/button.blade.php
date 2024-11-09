@@ -79,6 +79,12 @@
 @endif
 
 @if($button_delete)
+    <div class="btn-group ms-3" role="group">
+        <a href="javascript:panelio.button.delete()" class="btn btn-sm btn-danger">
+            <i class="la la-trash fs-2 position-absolute"></i>
+            <span class="ps-9">{{ trans($button_delete['title']) }}</span>
+        </a>
+    </div>
 @endif
 
 @if($button_actions)

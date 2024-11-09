@@ -58,6 +58,7 @@ return [
         "save_new" => "Save & New",
         "cancel" => "Cancel",
         "add" => "Add",
+        "delete" => "Delete",
         "export" => "Export",
         "import" => "Import",
         "status" => [
@@ -72,10 +73,14 @@ return [
         "setting_title" => "Screen Options",
         "help" => "Help",
 
-        "delete" => "Delete",
         "recycle" => "Recycle",
         "edit" => "Edit",
         "realized" => "Realized",
+
+        "are_you_sure" => "Are you sure?",
+        "are_you_sure_to_delete" => "Are you sure you want to delete?",
+        "yes_deleted" => "Yes, Delete",
+        "it_went_well" => "It went well! 😎",
     ],
 
     "dashboard" => "Dashboard",
@@ -93,6 +98,7 @@ return [
             "enable" => "Item :count status changed to active.",
             "disable" => "Item :count status changed to inactive.",
         ],
+        "delete" => "Item :count deleted successfully.",
     ],
 
     "modal" => [

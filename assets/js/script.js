@@ -26,6 +26,34 @@ const panelio = {
                 panelio.button.checked.alert()
             }
         },
+        delete: function(){
+            if (panelio.button.checked.has()) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: localize.language.panelio.button.are_you_sure,
+                    text: localize.language.panelio.button.are_you_sure_to_delete,
+                    showCancelButton: true,
+                    confirmButtonText: localize.language.panelio.button.yes_deleted,
+                    cancelButtonText: localize.language.panelio.button.cancel,
+                    allowOutsideClick: false,
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        panelio.button.submit_list_form('delete')
+                    } else {
+                        Swal.fire({
+                            icon: 'info',
+                            title: localize.language.panelio.button.it_went_well,
+                            showConfirmButton: true,
+                            confirmButtonText: localize.language.panelio.button.realized,
+                            allowOutsideClick: false
+                        })
+                    }
+                });
+            } else {
+                panelio.button.checked.alert()
+            }
+        },
         status: {
             enable: function() {
                 panelio.button.submit_list_form('status.enable')
