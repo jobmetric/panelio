@@ -9,6 +9,8 @@ use Illuminate\Routing\Controller as BaseController;
 use JobMetric\Category\Facades\Category;
 use JobMetric\PackageCore\Controllers\HasResponse;
 use JobMetric\Panelio\Exceptions\AlertTypeNotFoundException;
+use JobMetric\Panelio\Exceptions\ChangeStatusMethodNotFoundInControllerException;
+use JobMetric\Panelio\Exceptions\DeletesMethodNotFoundInControllerException;
 use JobMetric\Panelio\Http\Requests\ActionListRequest;
 use Throwable;
 
@@ -56,31 +58,38 @@ class Controller extends BaseController
         $danger = null;
         switch ($action) {
             case 'delete':
+                if (!method_exists($this, 'deletes')) {
+                    throw new DeletesMethodNotFoundInControllerException(class_basename($this));
+                }
+
                 if ($this->deletes($ids, $params, $alert, $danger)) {
-                    if (!is_null($alert)) {
+                    if (is_null($alert)) {
                         $alert = trans('panelio::base.message.delete', ['count' => count($ids)]);
                     }
                 }
+
                 break;
             case 'status.enable':
-                try {
-                    foreach ($ids as $id) {
-                        Category::update($id, ['status' => true]);
+                if (!method_exists($this, 'changeStatus')) {
+                    throw new DeletesMethodNotFoundInControllerException(class_basename($this));
+                }
+
+                if ($this->changeStatus($ids, true, $params, $alert, $danger)) {
+                    if (is_null($alert)) {
+                        $alert = trans('panelio::base.message.status.enable', ['count' => count($ids)]);
                     }
-                    $alert = trans('panelio::base.message.status.enable', ['count' => count($ids)]);
-                } catch (Throwable $e) {
-                    $danger = $e->getMessage();
                 }
 
                 break;
             case 'status.disable':
-                try {
-                    foreach ($ids as $id) {
-                        Category::update($id, ['status' => false]);
+                if (!method_exists($this, 'changeStatus')) {
+                    throw new ChangeStatusMethodNotFoundInControllerException(class_basename($this));
+                }
+
+                if ($this->changeStatus($ids, false, $params, $alert, $danger)) {
+                    if (is_null($alert)) {
+                        $alert = trans('panelio::base.message.status.disable', ['count' => count($ids)]);
                     }
-                    $alert = trans('panelio::base.message.status.disable', ['count' => count($ids)]);
-                } catch (Throwable $e) {
-                    $danger = $e->getMessage();
                 }
 
                 break;
