@@ -20,6 +20,9 @@ class SetDomiLocalizeMiddleware
             'panelio' => [
                 'button' => trans('panelio::base.button'),
             ],
+            'metadata' => [
+                'components' => trans('metadata::base.components'),
+            ],
         ]);
 
         return $next($request);
