@@ -5,7 +5,7 @@ namespace JobMetric\Panelio\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static \Illuminate\Http\JsonResponse of(object $object, array $extra = [], int $count = null)
+ * @method static \Illuminate\Http\JsonResponse of(object $object, array $extra = [], int $count = null, string $resource_class = null)
  * @method static string getSort(string $default = '')
  * @method static string getOrder(string $default = '')
  *

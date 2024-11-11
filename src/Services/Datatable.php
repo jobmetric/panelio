@@ -35,11 +35,12 @@ class Datatable
      * @param object $object
      * @param array $extra
      * @param int|null $count
+     * @param string|null $resource_class
      *
      * @return JsonResponse
      * @static
      */
-    public function of(object $object, array $extra = [], int $count = null): JsonResponse
+    public function of(object $object, array $extra = [], int $count = null, string $resource_class = null): JsonResponse
     {
         ini_set('xdebug.max_nesting_level', 9999);
 
@@ -52,7 +53,13 @@ class Datatable
             $total = $count;
         }
 
-        $data = $object->limit($length)->offset($start)->get()->toArray();
+        $data = $object->limit($length)->offset($start)->get();
+
+        if ($resource_class) {
+            $data = $resource_class::collection($data);
+        } else {
+            $data = $data->toArray();
+        }
 
         return response()->json(array_merge([
             'draw' => (int)@ request()->draw ?: 1,
