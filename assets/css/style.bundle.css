@@ -39894,6 +39894,11 @@ textarea.form-control-lg {
     border: 0
 }
 
+.btn-group-usm > .btn.btn-icon, .btn.btn-icon.btn-usm {
+    height: calc(1.5em + 0.2rem + 2px);
+    width: calc(1.5em + 0.2rem + 2px);
+}
+
 .btn-group-sm > .btn.btn-icon, .btn.btn-icon.btn-sm {
     height: calc(1.5em + 1.1rem + 2px);
     width: calc(1.5em + 1.1rem + 2px)

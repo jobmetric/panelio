@@ -33332,6 +33332,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 .btn.btn-icon:not(.btn-outline):not(.btn-dashed):not(.border-hover):not(.border-active):not(.btn-flush) {
   border: 0;
 }
+.btn.btn-icon.btn-usm, .btn-group-usm > .btn.btn-icon {
+  height: calc(1.5em + 0.2rem + 2px);
+  width: calc(1.5em + 0.2rem + 2px);
+}
 .btn.btn-icon.btn-sm, .btn-group-sm > .btn.btn-icon {
   height: calc(1.5em + 1.1rem + 2px);
   width: calc(1.5em + 1.1rem + 2px);
