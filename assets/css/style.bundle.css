@@ -2225,6 +2225,10 @@ progress {
     border-color: var(--bs-table-border-color)
 }
 
+[data-bs-theme=dark] .table {
+    --bs-table-bg: var(--bs-gray-100);
+}
+
 .table > :not(caption) > * > * {
     padding: .75rem .75rem;
     color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color)));
@@ -40393,7 +40397,7 @@ textarea.form-control-lg {
 .btn-check:active + .btn.btn-light-info, .btn-check:checked + .btn.btn-light-info, .btn.btn-light-info.active, .btn.btn-light-info.show, .btn.btn-light-info:active:not(.btn-active), .btn.btn-light-info:focus:not(.btn-active), .btn.btn-light-info:hover:not(.btn-active), .show > .btn.btn-light-info {
     color: var(--bs-info-inverse);
     border-color: var(--bs-info);
-    background-color: var(--bs-info) !important
+    background-color: var(--bs-info)
 }
 
 .btn-check:active + .btn.btn-light-info .svg-icon, .btn-check:active + .btn.btn-light-info i, .btn-check:checked + .btn.btn-light-info .svg-icon, .btn-check:checked + .btn.btn-light-info i, .btn.btn-light-info.active .svg-icon, .btn.btn-light-info.active i, .btn.btn-light-info.show .svg-icon, .btn.btn-light-info.show i, .btn.btn-light-info:active:not(.btn-active) .svg-icon, .btn.btn-light-info:active:not(.btn-active) i, .btn.btn-light-info:focus:not(.btn-active) .svg-icon, .btn.btn-light-info:focus:not(.btn-active) i, .btn.btn-light-info:hover:not(.btn-active) .svg-icon, .btn.btn-light-info:hover:not(.btn-active) i, .show > .btn.btn-light-info .svg-icon, .show > .btn.btn-light-info i {

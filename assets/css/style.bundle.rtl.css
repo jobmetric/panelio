@@ -2111,6 +2111,9 @@ progress {
   vertical-align: top;
   border-color: var(--bs-table-border-color);
 }
+[data-bs-theme=dark] .table {
+    --bs-table-bg: var(--bs-gray-100);
+}
 .table > :not(caption) > * > * {
   padding: 0.75rem 0.75rem;
   color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color)));
@@ -33911,7 +33914,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 .btn-check:checked + .btn.btn-light-info, .btn-check:active + .btn.btn-light-info, .btn.btn-light-info:focus:not(.btn-active), .btn.btn-light-info:hover:not(.btn-active), .btn.btn-light-info:active:not(.btn-active), .btn.btn-light-info.active, .btn.btn-light-info.show, .show > .btn.btn-light-info {
   color: var(--bs-info-inverse);
   border-color: var(--bs-info);
-  background-color: var(--bs-info) !important;
+  background-color: var(--bs-info);
 }
 .btn-check:checked + .btn.btn-light-info i,
 .btn-check:checked + .btn.btn-light-info .svg-icon, .btn-check:active + .btn.btn-light-info i,
