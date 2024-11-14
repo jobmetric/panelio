@@ -23,6 +23,9 @@ class SetDomiLocalizeMiddleware
             'metadata' => [
                 'components' => trans('metadata::base.components'),
             ],
+            'translation' => [
+                'modals' => trans('translation::base.modals'),
+            ],
         ]);
 
         return $next($request);
