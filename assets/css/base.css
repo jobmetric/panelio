@@ -43,3 +43,18 @@
     top: 1.1rem;
     left: 0.95rem;
 }
+
+.word-no-break {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+.auto-width-content {
+    white-space: nowrap;
+    width: auto;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
