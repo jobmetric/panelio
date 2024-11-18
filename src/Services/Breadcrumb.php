@@ -57,7 +57,7 @@ class Breadcrumb
      *
      * @return void
      */
-    public function add(string $title, string $link = null): void
+    public function add(string $title, string|null $link = null): void
     {
         $this->breadcrumb[] = [
             'title' => $title,

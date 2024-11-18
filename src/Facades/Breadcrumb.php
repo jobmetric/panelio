@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @method static array get()
- * @method static void add(string $title, string $link)
+ * @method static void add(string $title, string|null $link = null)
  *
  * @see \JobMetric\Panelio\Services\Breadcrumb
  */
