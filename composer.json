@@ -28,7 +28,7 @@
         "jobmetric/laravel-package-core": "^1.16",
         "jobmetric/domi": "^1.11",
         "jobmetric/media": "^1.9",
-        "jobmetric/larave-language": "^1.8"
+        "jobmetric/laravel-language": "^1.11"
     },
     "autoload": {
         "files": [
