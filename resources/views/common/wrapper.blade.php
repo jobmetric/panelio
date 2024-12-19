@@ -85,6 +85,13 @@
                 @php session()->forget('alert-dark') @endphp
             @endsession
 
+            @if($errors->any())
+            <div class="alert alert-danger d-flex justify-content-between fs-6" role="alert">
+                {{ trans('panelio::base.message.error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+
             @yield('body')
         </div>
     </div>

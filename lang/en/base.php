@@ -96,6 +96,7 @@ return [
     ],
 
     "message" => [
+        "error" => "To continue, please fix the errors.",
         "status" => [
             "enable" => "Item :count status changed to active.",
             "disable" => "Item :count status changed to inactive.",
