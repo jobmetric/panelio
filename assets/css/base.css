@@ -58,3 +58,16 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.text-highlight::before {
+    content: attr(data-label-colored);
+    color: var(--bs-text-danger);
+    font-weight: bold;
+    display: inline;
+}
+
+.text-highlight::after {
+    content: attr(data-label-noncolored);
+    color: inherit;
+    display: inline;
+}
