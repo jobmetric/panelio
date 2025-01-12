@@ -9,3 +9,11 @@ html, body {
 :placeholder-shown {
     direction: rtl;
 }
+
+.select2-loading {
+    position: absolute;
+    top: 55%;
+    left: 40px;
+    transform: translateY(-50%);
+    z-index: 1000;
+}

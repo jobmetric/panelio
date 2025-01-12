@@ -134,6 +134,25 @@ const panelio = {
             panelio.button.submit_list_form('import.' + type)
         },
     },
+    select2: {
+        loading: {
+            show: function(selector){
+                const $container = $(selector).data('select2').$container;
+
+                if (!$container.find('.select2-loading-spinner').length) {
+                    $container.append(`
+                        <div class="select2-loading">
+                            <span class="spinner-border spinner-border-sm text-primary" role="status" aria-hidden="true"></span>
+                        </div>
+                    `);
+                }
+            },
+            hide: function(selector){
+                const $container = $(selector).data('select2').$container;
+                $container.find('.select2-loading').remove();
+            },
+        },
+    },
 }
 
 $(document).ready(function () {

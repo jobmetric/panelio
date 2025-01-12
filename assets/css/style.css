@@ -1,0 +1,7 @@
+.select2-loading {
+    position: absolute;
+    top: 55%;
+    right: 40px;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
