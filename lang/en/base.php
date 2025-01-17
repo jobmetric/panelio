@@ -83,6 +83,9 @@ return [
         "are_you_sure_to_delete" => "Are you sure you want to delete?",
         "yes_deleted" => "Yes, Delete",
         "it_went_well" => "It went well! 😎",
+
+        "send" => "Send",
+        "loading" => "Loading...",
     ],
 
     "dashboard" => "Dashboard",
